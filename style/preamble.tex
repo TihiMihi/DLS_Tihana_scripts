@@ -1,0 +1,60 @@
+\usepackage{graphicx}
+\usepackage{./style/head}     % Add local fullpage and head macros
+\parindent=0pt          %  Switch off indent of paragraphs 
+\parskip=5pt            %  Put 5pt between each paragraph  
+\usepackage{fontspec}
+\usepackage[english]{babel}
+\usepackage{setspace}
+\setstretch{1.5}
+\usepackage{libertinus}
+\setmainfont{Libertinus Sans}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+%\usepackage{mathpazo}
+%\usepackage{domitian}
+%\usepackage[T1]{fontenc}
+%\let\oldstylenums\oldstyle
+\usepackage{enumerate}
+\usepackage[
+pdfauthor={Patrick Wang},
+pdftitle={Patrick Wang MChemPhys Thesis},		
+pdfsubject={Improving the Accuracy of Flux Calculations in Ray Tracing Simulations For Soft X-Ray Beamlines},
+pdfproducer={LaTeX with hyperref},
+pdfcreator={LuaLaTeX}]{hyperref}
+\usepackage{booktabs}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage[capitalise]{cleveref}
+\usepackage{tikz}
+\usepackage{mathdots}
+%\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{pgf}
+\usepackage{array}
+\usepackage{multirow}
+%\usepackage{amssymb}
+
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{extarrows}
+\usepackage{booktabs}
+\usepackage{textgreek}
+\usepackage{multicol}
+\usepackage{float}
+\usetikzlibrary{fadings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
+\hypersetup{
+	colorlinks,
+	linkcolor = {blue!50!black},
+	citecolor={green!50!black}
+}
+\input{./style/figureinclude.tex}
+\newcommand{\cff}{\mathit{c_{ff}}}
+\usepackage[labelfont={bf, it}]{caption}
+\usepackage[top=2.5cm, bottom=3cm, left=2cm, right=2cm]{geometry}
+\usepackage{acro}
+\renewcommand{\vec}{\vb}
+\newcommand{\shadow}{\textit{SHADOW}}

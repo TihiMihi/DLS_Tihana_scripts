@@ -1,0 +1,113 @@
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,296); %set diagram left start at 0, and has height of 296
+
+%Straight Lines [id:da7550152812298063] 
+\draw    (245.43,155.35) -- (437,156.15) ;
+%Straight Lines [id:da46588142016444034] 
+\draw    (291.66,157.59) -- (339.51,83.97) ;
+\draw [shift={(341.14,81.46)}, rotate = 123.02] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da6976715893326152] 
+\draw [color={rgb, 255:red, 16; green, 112; blue, 226 }  ,draw opacity=1 ]   (341.14,81.46) -- (429.1,58.75) ;
+\draw [shift={(432,58)}, rotate = 165.53] [fill={rgb, 255:red, 16; green, 112; blue, 226 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da4908224950912702] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (409.48,63.97) -- (401.05,34.14) ;
+\draw [shift={(400.23,31.25)}, rotate = 74.22] [fill={rgb, 255:red, 208; green, 2; blue, 27 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da19294363492805844] 
+\draw [color={rgb, 255:red, 80; green, 227; blue, 194 }  ,draw opacity=1 ]   (291.66,157.59) -- (398.28,33.53) ;
+\draw [shift={(400.23,31.25)}, rotate = 130.67] [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da23798774444786142] 
+\draw [color={rgb, 255:red, 16; green, 112; blue, 226 }  ,draw opacity=1 ]   (339.57,232.2) -- (407.64,250.66) ;
+%Straight Lines [id:da9859541426666923] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (407.64,250.66) -- (415.01,220.54) ;
+\draw [shift={(415.72,217.63)}, rotate = 103.74] [fill={rgb, 255:red, 208; green, 2; blue, 27 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da12729249079031701] 
+\draw [color={rgb, 255:red, 80; green, 227; blue, 194 }  ,draw opacity=1 ]   (291.66,157.59) -- (413.02,216.32) ;
+\draw [shift={(415.72,217.63)}, rotate = 205.82] [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da05143417450882737] 
+\draw    (291.66,157.59) -- (339.51,231.21) ;
+\draw [shift={(341.14,233.73)}, rotate = 236.98] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da826250661852056] 
+\draw    (291.37,28) -- (291.95,263.35) ;
+%Straight Lines [id:da11941086820244107] 
+\draw    (13.43,154.42) -- (205,155.22) ;
+%Straight Lines [id:da3999095921012512] 
+\draw    (59.66,156.66) -- (119.32,68.48) ;
+\draw [shift={(121,66)}, rotate = 124.08] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da9628273166040977] 
+\draw [color={rgb, 255:red, 80; green, 227; blue, 194 }  ,draw opacity=1 ]   (59.66,156.66) -- (172.52,79.69) ;
+\draw [shift={(175,78)}, rotate = 145.71] [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da6643544471017715] 
+\draw    (59.37,27.07) -- (59.95,262.41) ;
+%Straight Lines [id:da8797013371076065] 
+\draw [color={rgb, 255:red, 16; green, 112; blue, 226 }  ,draw opacity=1 ]   (121,66) -- (172.07,77.35) ;
+\draw [shift={(175,78)}, rotate = 192.53] [fill={rgb, 255:red, 16; green, 112; blue, 226 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da6751744395309407] 
+\draw    (59.66,155.34) -- (119.32,243.52) ;
+\draw [shift={(121,246)}, rotate = 235.92] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da44902942134315704] 
+\draw [color={rgb, 255:red, 80; green, 227; blue, 194 }  ,draw opacity=1 ]   (59.66,155.34) -- (172.52,232.31) ;
+\draw [shift={(175,234)}, rotate = 214.29] [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da9646301013142708] 
+\draw [color={rgb, 255:red, 16; green, 112; blue, 226 }  ,draw opacity=1 ]   (121,246) -- (172.07,234.65) ;
+\draw [shift={(175,234)}, rotate = 167.47] [fill={rgb, 255:red, 16; green, 112; blue, 226 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da435444060570912] 
+\draw [color={rgb, 255:red, 16; green, 112; blue, 226 }  ,draw opacity=1 ]   (365,239) -- (430.18,256.67) ;
+\draw [shift={(433.08,257.46)}, rotate = 195.17] [fill={rgb, 255:red, 16; green, 112; blue, 226 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da24329652208517372] 
+\draw [color={rgb, 255:red, 144; green, 19; blue, 254 }  ,draw opacity=1 ]   (409.54,251.43) -- (432.08,257.46) ;
+\draw [shift={(406.64,250.66)}, rotate = 14.97] [fill={rgb, 255:red, 144; green, 19; blue, 254 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da15910124216503885] 
+\draw [color={rgb, 255:red, 144; green, 19; blue, 254 }  ,draw opacity=1 ]   (412.38,63.2) -- (432,58) ;
+\draw [shift={(409.48,63.97)}, rotate = 345.14] [fill={rgb, 255:red, 144; green, 19; blue, 254 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+% Text Node
+\draw (355.06,168.35) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 80; green, 227; blue, 194 }  ,opacity=1 ] [align=left] {$\displaystyle |F_{PH} |^{( -)}$};
+% Text Node
+\draw (336.05,109.08) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 80; green, 227; blue, 194 }  ,opacity=1 ] [align=left] {$\displaystyle |F_{PH} |^{( +)}$};
+% Text Node
+\draw (408,33) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ] [align=left] {$\displaystyle f''$};
+% Text Node
+\draw (420,215) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ] [align=left] {$\displaystyle f''$};
+% Text Node
+\draw (349.23,247.93) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 16; green, 112; blue, 226 }  ,opacity=1 ] [align=left] {$\displaystyle |F_{H} |^{( -)}$};
+% Text Node
+\draw (291.05,224.22) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {$\displaystyle |F_{P} |^{( -)}$};
+% Text Node
+\draw (293.17,80.77) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {$\displaystyle |F_{P} |^{( +)}$};
+% Text Node
+\draw (365,74) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 16; green, 112; blue, 226 }  ,opacity=1 ] [align=left] {$\displaystyle |F_{H} |^{( +)}$};
+% Text Node
+\draw (293.37,31) node [anchor=north west][inner sep=0.75pt]   [align=left] {Im};
+% Text Node
+\draw (247.43,158.35) node [anchor=north west][inner sep=0.75pt]   [align=left] {Re};
+% Text Node
+\draw (116,174) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 80; green, 227; blue, 194 }  ,opacity=1 ] [align=left] {$\displaystyle |F_{PH} |^{( -)}$};
+% Text Node
+\draw (124,114) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 80; green, 227; blue, 194 }  ,opacity=1 ] [align=left] {$\displaystyle |F_{PH} |^{( +)}$};
+% Text Node
+\draw (126,244) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 16; green, 112; blue, 226 }  ,opacity=1 ] [align=left] {$\displaystyle |F_{H} |^{( -)}$};
+% Text Node
+\draw (64,220) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {$\displaystyle |F_{P} |^{( -)}$};
+% Text Node
+\draw (68,78) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {$\displaystyle |F_{P} |^{( +)}$};
+% Text Node
+\draw (134,46) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 16; green, 112; blue, 226 }  ,opacity=1 ] [align=left] {$\displaystyle |F_{H} |^{( +)}$};
+% Text Node
+\draw (61.37,30.07) node [anchor=north west][inner sep=0.75pt]   [align=left] {Im};
+% Text Node
+\draw (15.43,157.42) node [anchor=north west][inner sep=0.75pt]   [align=left] {Re};
+% Text Node
+\draw (406,260) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 144; green, 19; blue, 254 }  ,opacity=1 ] [align=left] {$\displaystyle f'$};
+% Text Node
+\draw (416,65) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 144; green, 19; blue, 254 }  ,opacity=1 ] [align=left] {$\displaystyle f'$};
+% Text Node
+\draw (15,27) node [anchor=north west][inner sep=0.75pt]   [align=left] {(A)};
+% Text Node
+\draw (246,27) node [anchor=north west][inner sep=0.75pt]   [align=left] {(B)};
+
+
+\end{tikzpicture}

@@ -1,0 +1,12 @@
+\acswitchoff 
+\babel@toc {english}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces An illustration of a diffraction process from a laminar grating. $\mitalpha $ and $\mitbeta $ are angles of incidence and diffraction, $g$ is the period of one grating groove.\relax }}{4}{figure.caption.7}%
+\contentsline {figure}{\numberline {2}{\ignorespaces A popular SX-700 style \ac {pgm} designed by Petersen \textit {et al.} \blx@tocontentsinit {0}\cite {Petersen1995}. Demonstrating the rotations of mirror and grating to obtain different energies ($E$ and $E'$) in the fixed $\mathit {c_{ff}}$ mode. In the above scenario, $\cos \mitbeta /\cos \mitalpha = \cos \mitbeta '/\cos \mitalpha ' \equiv \mathit {c_{ff}}$ remains constant, however, $E' > E$. Without loss of generality, $\mitalpha \neq \mitalpha '$, $\mittheta \neq \mittheta '$, and $\mitbeta \neq \mitbeta '$.\relax }}{6}{figure.caption.12}%
+\contentsline {figure}{\numberline {3}{\ignorespaces A schematic of a typical modern \ac {pgm} geometry. Quantities highlighted with red arrows are to be fixed prior to manufacturing. Figure adapted from unpublished work by Dr T.-L Lee \blx@tocontentsinit {0}\cite {Lee}.\relax }}{7}{figure.caption.13}%
+\contentsline {figure}{\numberline {4}{\ignorespaces A side view schematic of possible blockages within the \ac {pgm} during operation. \textbf {Top} illustrates partial blockage by the upstream edge of the grating. \textbf {Bottom} illustrates the blockage by the down stream corner of the mirror.\relax }}{8}{figure.caption.14}%
+\contentsline {figure}{\numberline {5}{\ignorespaces The current and proposed workflow of simulating a beamline with a \ac {pgm}. \relax }}{9}{figure.caption.15}%
+\contentsline {figure}{\numberline {6}{\ignorespaces text\relax }}{12}{figure.caption.17}%
+\contentsline {figure}{\numberline {7}{\ignorespaces text\relax }}{12}{figure.caption.18}%
+\contentsline {figure}{\numberline {8}{\ignorespaces text\relax }}{12}{figure.caption.19}%
+\contentsline {figure}{\numberline {9}{\ignorespaces text\relax }}{12}{figure.caption.20}%
+\contentsline {figure}{\numberline {10}{\ignorespaces text\relax }}{12}{figure.caption.21}%

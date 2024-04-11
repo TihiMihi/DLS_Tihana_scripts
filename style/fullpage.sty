@@ -1,0 +1,31 @@
+%
+% Fullpage style macro to set the actual text area to have 1 in (sorry)
+% margins as top and bottom. The Headers and Footers are within the top
+% and bottom margins. This format puts the maximum (sensible) amount
+% of text on a single page.
+%
+% Latex2e version of the 2.09 a4full style.
+%
+% Will Hossack, The University of Edinburgh.
+%
+%	Version 1.0					7/2/97
+%
+\typeout{Fullpage style Version 1.0}
+%
+%	Set margins to zero and textwidth to 2in smaller than the paper
+%
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-2truein}
+%
+%       Set actual text height to 2 in smaller than paper.
+%
+\setlength{\textheight}{\paperheight}
+\addtolength{\textheight}{-2truein}
+%
+%       Set the top margin so that the header extends into the margin
+%
+\setlength{\topmargin}{0pt}
+\addtolength{\topmargin}{-\headheight}
+\addtolength{\topmargin}{-\headsep}

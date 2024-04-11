@@ -1,0 +1,38 @@
+% !TeX program = lualatex
+\documentclass[a4paper,12pt]{article}
+\input{./style/preamble.tex}
+\input{./content/acronyms.tex}
+\usepackage[style=phys,backend=bibtex]{biblatex}
+
+\newcommand{\detailtexcount}[1]{%
+  \immediate\write18{texcount -merge -sum -q #1.tex output.bbl > #1.wcdetail }%
+  \verbatiminput{#1.wcdetail}%
+}
+
+\addbibresource{export.bib}%cite.bib
+\graphicspath{ {plots/} }
+\newcommand{\hkl}{hk\ell}
+
+\begin{document}
+\pagenumbering{roman} 
+
+
+
+\input{./content/frontmatter.tex}
+
+\pagenumbering{arabic}
+\input{./content/introduction.tex}
+
+\input{./content/methodology.tex}
+
+\input{./content/results.tex}
+
+\input{./content/conclusion.tex}
+
+\detailtexcount{main}
+
+%Appendix and Backmatter
+\input{./content/backmatter.tex}
+
+\end{document}
+
