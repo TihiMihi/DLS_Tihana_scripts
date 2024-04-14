@@ -150,19 +150,19 @@ Absorption corrections are typically performed using empirical methods based on 
     \label{fig:SH}
 \end{figure}
 
-Most data reduction software in \ac{mx} use \ac{sh} as a basis for absorption correction calculations. This includes DIALS (Winter 2018), the reduction software standardly used at Diamond Light Source.
+Most data reduction software in \ac{mx} use \ac{sh} as a basis for absorption correction calculations. This includes DIALS \cite{Winter2018}(Winter 2018), the reduction software standardly used at Diamond Light Source.
 
 Because empirical methods are independent of sample geometry, their efficiency depends on the number of symmetry equivalent reflections, which is limited by data multiplicity. Their applicability is therefore limited in low-symmetry space groups. More relevant to I23, empirical corrections become inadequate for modelling strong absorption effects above 3.5 Å, and an analytical correction is needed \cite{Kazantsev2021}.
 
 %To analytically calculate the $A_{\hkl}$ factors in \cref{AbsFactor_allmaterials}, the shape and orientation have to be characterised in detail.
-Characterising the shape and orientation in detail has previously been done using optical microscopy (Leal 2008, Strutz 2011). An alternative approach taken by I23 to obtain the 3D model is X-ray tomography, which has been applied to characterise and visualise crystals (Merrifield 2011, Warren 2013).
+Characterising the shape and orientation in detail has previously been done using optical microscopy \cite{Leal2008, Strutz2011} (Leal 2008, Strutz 2011). An alternative approach taken by I23 to obtain the 3D model is X-ray tomography, which has been applied to characterise and visualise crystals \cite{Merrifield2011, Warren2013}(Merrifield 2011, Warren 2013).
 
 This approach is the focus of this investigation. It has previously been reported that using tomographic reconstructions and segmentation as a basis for absorption correction allows for the calculation of X-ray path lengths through all the different materials in the sample \cite{Brockhauser2008}.
 
 \begin{figure}
     \centering
     \includegraphics[width = 0.6\textwidth]{images/absorption correction diagram.jpg}
-    \caption{Cartoon model of the absolute path lengths of X-rays through the crystal sample used as a basis for analytically calculating absorption coefficients of sample material. Adapted by Lu \textit{et al.} \cite{LuSubmitted}.
+    \caption{Cartoon model of the absolute path lengths of X-rays through the crystal sample used as a basis for analytically calculating absorption coefficients of sample material. Adapted by Lu \textit{et al.} \cite{Lu}.
     % Fig. 1. A sketch illustrating the ray-tracing method used to calculate an absorption correction factor for a crystal voxel n. L(n)_m1 and L(n)_m2 represent the path lengths of m1	m2 the incident and diffracted X-ray beams through the material m (loop, liquor and crystal).
     }
     \label{fig:analytical correction model}
