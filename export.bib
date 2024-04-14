@@ -70,7 +70,7 @@
   pages    = {180},
   volume   = {10},
   abstract = {A program is described for the high-speed computation of the absorption correction factor for single-crystal diffraction measurements. The method requires that the sample boundaries be approximated by plane surfaces and that there be no re-entrant angles between these planes. The derivation of structure factors from integrated intensity measurements in X-ray or neutron diffrac-tion usually requires a correction for absorption of radiation in the specimen. Tabulated values of this correction, expressed as the ratio of integrated intensity yielded by an absorbing specimen to that yielded by an hypothetical non-absorbing specimen of equal volume, are available for cylindrical (Bradley, 1935) and spherical (Evans & Ekstein, 1952) sample shapes. For accurate measurement of structure factors, the specimen is often reduced to one of these simple forms. However, for a number of reasons, it frequently proves to be undesirable or difficult to shape a sample. The size and shape of available crystals may not permit cutting a sphere or cylinder large enough to give satisfactory intensities. Physical properties such as anisotropic resistance to grinding, or ease of cleavage or fracture may make shaping difficult. Furthermore, a cylindrical specimen may be used in only one orientation ; while a spherical specimen obviates this difficulty , it may not permit optimum use of a beam with a long narrow cross section such as is usual in neutron diffraction spectrometers. Several methods of correcting for absorption in samples of other shapes have been reported by Hender-shot (1937), Albrecht (1939), Howells (1950) and Evans (1952), but all of them appear to be rather laborious. The availability of a high-speed computer now makes possible the rapid calculation of the absorption correction factor for each reflection from a crystal of essentially arbitrary shape. While the program to be described has been prepared for the Oak Ridge computer, the Oracle, the principles should be applicable to any calculator of sufficient speed and capacity. The program is designed for zero-level reflections only, but this restriction can be removed by a simple modification. It is assumed that the crystal is bounded by n plane surfaces and thus is described by a set of inequalities a~x+b~y+c~z-d~ > 0, s = 1, 2, ..., n, (1) * This work was performed under the auspices of the United States Atomic Energy Commission. with coefficients as, bs, cs, ds chosen so that the inequalities are all satisfied only if the point x, y, z lies inside or on the surface of the crystal. This is a satisfactory description if there are no re-entrant angles between bounding planes, a condition which is assumed for this treatment. Cartesian coordinate axes for this description are chosen so that the z axis parallels the zone axis of the level being studied and the x axis lies in a crystal plane chosen for reference, with respect to which interplanar angles for all reflections are specified. The configuration of crystal and spectrometer for a given reflection is specified by 0, the Bragg angle, and 2:, the interplanar angle with respect to the reference plane. From these are derived the angles = x+0+n, fl = ;~-0, (2) giving respectively the reverse direction of the primary beam and the forward direction of the diffracted beam as measured from the x axis. These relations are shown geometrically in Fig. 1.* The factor to be computed is given by A-I (l/V)exp [-#(r~+r~)]dV, where the integration is over the volume of the crystal, V, and where t~ is the linear absorption coefficient, r, the path length along the primary beam direction, and r e that along the diffracted beam direction. In this program the integral is evaluated numerically using the method of Gauss (see, for example, Margenau & Murphy, 1943, p. 462) which will be described first for a one-dimensional integration. The method approximates the integral by a weighted sum of m terms: where l b ,n g(x)dx ~ (b-a) ~ R~g(x~) , a i=l xi = a+ (b-a)u~ * The choice of Z to satisfy (2) is made convenient by the particular arrangement of the neutron spectrometer at this laboratory. Other arrangements might well dictate a different description of the angles.},
-  groups   = {LitReview, Thesis},
+  groups   = {LitReview},
 }
 
 @Misc{Detitta1985,
@@ -327,7 +327,7 @@
   volume    = {1607},
   abstract  = {For many years, diffraction experiments in macromolecular crystallography at X-ray wavelengths longer than that of Cu-Kα (1.54 Å) have been largely underappreciated. Effects caused by increased X-ray absorption result in the fact that these experiments are more difficult than the standard diffraction experiments at short wavelengths. However, due to the also increased anomalous scattering of many biologically relevant atoms, important additional structural information can be obtained. This information, in turn, can be used for phase determination, for substructure identification, in molecular replacement approaches, as well as in structure refinement. This chapter reviews the possibilities and the difficulties associated with such experiments, and it provides a short description of two macromolecular crystallography synchrotron beam lines dedicated to long-wavelength X-ray diffraction experiments.},
   doi       = {10.1007/978-1-4939-7000-1_17/COVER},
-  groups    = {LitReview, Thesis},
+  groups    = {LitReview},
   keywords  = {Anomalous scattering,Diffraction efficiency,Long-wavelength experiments,Macromolecular crystallography,Molecular replacement,Native SAD,S-SAD phasing,Soft X-rays,Substructure identification,X-ray absorption},
   pmid      = {28573583},
   publisher = {Humana Press Inc.},
@@ -903,7 +903,7 @@
   isbn      = {9781493927630},
   booktitle = {Nucleic Acid Crystallography},
   doi       = {10.1007/978-1-4939-2763-0_11},
-  groups    = {LitReview, Thesis},
+  groups    = {LitReview},
   issn      = {1940-6029},
 }
 
@@ -944,7 +944,7 @@
   pages     = {1091--1103},
   volume    = {149},
   doi       = {10.1085/jgp.201711852},
-  groups    = {LitReview, Thesis},
+  groups    = {LitReview},
   publisher = {Rockefeller University Press},
 }
 
@@ -960,7 +960,7 @@
   pages     = {1--21},
   volume    = {275},
   doi       = {10.1111/j.1742-4658.2007.06178.x},
-  groups    = {LitReview, Thesis},
+  groups    = {LitReview},
   publisher = {Wiley},
 }
 
@@ -1210,61 +1210,89 @@
   publisher = {International Union of Crystallography (IUCr)},
 }
 
- 
-@Article{Busing1957,
-  author    = {Busing, W. R. and Levy, H. A.},
-  journal   = {Acta Crystallographica},
-  title     = {High-speed computation of the absorption correction for single-crystal diffraction measurements},
-  year      = {1957},
-  issn      = {0365-110X},
-  month     = mar,
-  number    = {3},
-  pages     = {180--182},
-  volume    = {10},
-  doi       = {10.1107/s0365110x57000584},
-  groups    = {Thesis},
-  publisher = {International Union of Crystallography (IUCr)},
-}
-
- 
-@Article{Santoro1968,
-  author    = {Santoro, A. and Weir, C. E. and Block, S. and Piermarini, G. J.},
-  journal   = {Journal of Applied Crystallography},
-  title     = {Absorption corrections in complex cases. Application to single crystal diffraction studies at high pressure},
-  year      = {1968},
-  issn      = {0021-8898},
-  month     = jun,
-  number    = {2},
-  pages     = {101--107},
-  volume    = {1},
-  doi       = {10.1107/s0021889868005078},
-  groups    = {Thesis},
-  publisher = {International Union of Crystallography (IUCr)},
-}
-
-@Article{LuSubmitted,
-  author  = {Yishun Lu and Ramona Duman and James Beilsten-Edmands and Graeme Winter and Mark Basham and Gwyndaf Evans and Jos Kamps and Allen Orville and Hok-Sau Kwong and Konstantinos Beis and Armin Wagner and Wesley Armour},
+@Article{Lu,
+  author  = {Yishun Lu, Ramona Duman, James Beilsten-Edmands, Graeme Winter, Armin Wagner, Wesley Armour},
   journal = {Journal of Applied Crystallography},
   title   = {Ray-tracing analytical absorption correction for X-ray crystallography based on tomographic reconstructions},
   year    = {Submitted},
-  note    = {Unpublished},
-  groups  = {Thesis, LitReview},
+  note    = {Submitted},
+  groups  = {Thesis},
 }
 
  
-@Article{Brockhauser2008,
-  author    = {Brockhauser, Sandor and Di Michiel, Marco and McGeehan, John E. and McCarthy, Andrew A. and Ravelli, Raimond B. G.},
+@Article{Leal2008,
+  author    = {Leal, Ricardo M. F. and Teixeira, Susana C. M. and Rey, Vicente and Forsyth, V. Trevor and Mitchell, Edward P.},
   journal   = {Journal of Applied Crystallography},
-  title     = {X-ray tomographic reconstruction of macromolecular samples},
+  title     = {Absorption correction based on a three-dimensional model reconstruction from visual images},
   year      = {2008},
   issn      = {0021-8898},
-  month     = oct,
-  number    = {6},
-  pages     = {1057--1066},
+  month     = jun,
+  number    = {4},
+  pages     = {729--737},
   volume    = {41},
-  doi       = {10.1107/s002188980802935x},
+  doi       = {10.1107/s0021889808011898},
   groups    = {Thesis},
   publisher = {International Union of Crystallography (IUCr)},
+}
+
+ 
+@Article{Strutz2011,
+  author    = {Strutz, Tilo},
+  journal   = {IEEE/ACM Transactions on Computational Biology and Bioinformatics},
+  title     = {3D Shape Reconstruction of Loop Objects in X-Ray Protein Crystallography},
+  year      = {2011},
+  issn      = {1545-5963},
+  month     = may,
+  number    = {3},
+  pages     = {797--807},
+  volume    = {8},
+  doi       = {10.1109/tcbb.2010.67},
+  groups    = {Thesis},
+  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+}
+
+ 
+@Article{Merrifield2011,
+  author    = {Merrifield, David R and Ramachandran, Vasuki and Roberts, Kevin J and Armour, Wesley and Axford, Danny and Basham, Mark and Connolley, Thomas and Evans, Gwyndaf and McAuley, Katherine E and Owen, Robin L and Sandy, James},
+  journal   = {Measurement Science and Technology},
+  title     = {A novel technique combining high-resolution synchrotron x-ray microtomography and x-ray diffraction for characterization of micro particulates},
+  year      = {2011},
+  issn      = {1361-6501},
+  month     = sep,
+  number    = {11},
+  pages     = {115703},
+  volume    = {22},
+  doi       = {10.1088/0957-0233/22/11/115703},
+  groups    = {Thesis},
+  publisher = {IOP Publishing},
+}
+
+ 
+@Article{Warren2013,
+  author    = {Warren, Anna J. and Armour, Wes and Axford, Danny and Basham, Mark and Connolley, Thomas and Hall, David R. and Horrell, Sam and McAuley, Katherine E. and Mykhaylyk, Vitaliy and Wagner, Armin and Evans, Gwyndaf},
+  journal   = {Acta Crystallographica Section D Biological Crystallography},
+  title     = {Visualization of membrane protein crystals in lipid cubic phase using X-ray imaging},
+  year      = {2013},
+  issn      = {0907-4449},
+  month     = jun,
+  number    = {7},
+  pages     = {1252--1259},
+  volume    = {69},
+  doi       = {10.1107/s0907444913011359},
+  groups    = {Thesis},
+  publisher = {International Union of Crystallography (IUCr)},
+}
+
+@Article{,
+  groups = {Thesis},
+}
+
+@InProceedings{Winter2013,
+  author = {Graeme Winter and David Waterman and Gwyndaf Evans},
+  title  = {DIALS Framework Report},
+  year   = {2013},
+  file   = {:C\:/Users/icf19162/OneDrive - Diamond Light Source Ltd/Documents/Papers/Beamline/DIALS_Framework_Report.pdf:PDF},
+  groups = {Thesis},
 }
 
  
@@ -1283,39 +1311,10 @@
   publisher = {International Union of Crystallography (IUCr)},
 }
 
- 
-@Article{Kazantsev2022,
-  author    = {Kazantsev, Daniil and Wadeson, Nicola and Basham, Mark},
-  journal   = {SoftwareX},
-  title     = {High performance Savu software for fast 3D model-based iterative reconstruction of large data at Diamond Light Source},
-  year      = {2022},
-  issn      = {2352-7110},
-  month     = jul,
-  pages     = {101157},
-  volume    = {19},
-  doi       = {10.1016/j.softx.2022.101157},
-  groups    = {Thesis},
-  publisher = {Elsevier BV},
-}
-
- 
-@Article{Duman2021,
-  author    = {Duman, Ramona and Orr, Christian M. and Mykhaylyk, Vitaliy and El Omari, Kamel and Pocock, Robert and Grama, Vinay and Wagner, Armin},
-  journal   = {Journal of Visualized Experiments},
-  title     = {Sample Preparation and Transfer Protocol for In-Vacuum Long-Wavelength Crystallography on Beamline I23 at Diamond Light Source},
-  year      = {2021},
-  issn      = {1940-087X},
-  month     = apr,
-  number    = {170},
-  doi       = {10.3791/62364},
-  groups    = {Thesis},
-  publisher = {MyJove Corporation},
-}
-
 @Comment{jabref-meta: databaseType:bibtex;}
 
 @Comment{jabref-meta: grouping:
 0 AllEntriesGroup:;
-1 StaticGroup:Thesis\;0\;0\;0x8a8a8aff\;\;\;;
-1 StaticGroup:LitReview\;0\;1\;0x8a8a8aff\;\;\;;
+1 StaticGroup:Thesis\;0\;1\;0x8a8a8aff\;\;\;;
+1 StaticGroup:LitReview\;0\;0\;0x8a8a8aff\;\;\;;
 }

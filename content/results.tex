@@ -1,55 +1,136 @@
 \section{Results and Discussion}
 
+The scope of experiments in this project involve extensive use of AnACor, the prototype software used at beamline I23 for adding an analytical correction to reflections and reflection intensities \cite{Lu}. Previous work from I23 has documented the successes of tomographic reconstruction and segmentation pipelines to determine analytical absorption factors \cite{Kazantsev2021}; however, AnACor has only recently become the routine for this. The software is still in its developing stages with many reoccurring errors which limit our ability to do data processing and the reliability of results. Validation of the experimental results is therefore still necessary when possible.
+
+One example of a step taken to improve reliability in this project is when samples containing solely the mother-liquor that crystals were grown in were available, tomography data would be collected on these as well as the crystal samples. The segmentation of loops containing only liquor allow for more reliable thresholds to be applied with fewer materials to account for, and therefore produces more accurate coefficients.
+
+Since low-energy tomographic scans are prone to high contrast artefacts which limit visibility in the segmentation, tomography scans intended for diffraction experiments collected at or below 3 keV would be collected at 3.5 keV, in addition to the low energy. Distinguishing between materials in the 3.5 keV tomography scans is somewhat easier, and therefore provides better segmentation for the reflection data collected at lower energies.
+
+Finally ... preliminary tests
+
+\subsection{Preliminary tests}
+
+Because the final reflection data heavily relies on the accuracy of absorption factors, the first experiments conducted for this project were a validation of the accuracy of AnACor's pre-process calculations. Theoretical absorption coefficients for a specific material are determined with its chemical formula, density, and the energy in question. The first experiment on AnACor used crystals of ethylene glycol and santovac to compare experimentally calculated coefficients from the software with theoretical coefficients. The results of this are shown in Table ...
+
+The experimental coefficients of santovac between 3 and 4.5 keV are all within 1.5 \% of the theoretical value. This percentage difference, however, appears to grow with energy, with a nearly 7\% difference at 6 keV.
+
+Judging from the results of these two proteins alone, AnACor appears to overestimate coefficients at higher energies and has similar behaviour in underestimating coefficients at lower energies. A possible explanation for the latter is the effect of high contrast at low energies limiting distinctions between materials; however, this does not explain the overestimatations at higher energies. It is also possible that the calculations do not sufficiently account for the changing dependence of absorption on wavelength, which is less strong at higher energies. This would explain both trends.
+
+A second validation experiment on AnACor involved samples of chlorite dismutase (Cld) and the membrane protein OmpK36 GD. Data on these two samples has already been analysed in Lu \textit{et al.} \cite{Lu} to compare the same approaches for absorption corrections discussed in this project: a \ac{sh} correction, analytical, and a combination of the two. The aim of this subsequent experiment, was to assess the accuracy of the absorption coefficients of crystal and liquor published in this paper. This was assessed with the assumption that the accuracy correlates to the best possible data quality, where the intensity to uncertainty ($I / \sigma$) peaks and the $R_{merge}$ factors are diminished.
+
+Taking the coefficients published in this paper as a reference and varying both in intervals of \pm 10, sets up a variety of possible combinations of coefficient pairs which can together elucidate the optimal amount of variation in both for improving the merging statistics. The coefficients were varied from -20 \% to + 20 \%; after preliminary results were collected, the liquor coefficients were varied a further interval up to + 30 \%, giving a total of 30 coefficient variations. %The crystal reference was
+
+The merging statics for all 30 AnACor experiments are shown in ... for Cld and in ... for Ompk. The merging statistics of Cld tell a clearer story than that of Ompk: in \cref{cld_Isig} the $I/\sigma$ seems to peak between +10 and +20\% in the crystal factor, and +10\% for liquor. Looking at the R-factors in \cref{cld_rm}, these values are minimised at the same variation. This indicates to the combination of coefficients that is presumably the most accurate for these materials, as it provides the best merging statistics.
+
+In a perfect experiment, these optimal statistics would align at $\pm0,\pm0$, as this would indicate that the references AnACor calculated are good estimates. The underestimation here could be caused by several factors, including poor segmentation or insufficient threshold selections in pre-processing. Nonetheless, this procedure is still useful in correcting for small errors that deter AnACor from obtaining the true values. 
+
+The ompk results, on the other hand, are less clear. Despite the fact that there is an area of \cref{ompk_Isig} where $I/\sigma$ is maximised, the R-factors in \cref{ompk_rm} do not change smoothly. Instead, there are only 3 values of the R-factor across all 30 experiments with no incremental changes in between. This is a limitation in finding the optimal variation of coefficients, as the optimal R-factor cannot be corroborated with the optimal $I/\sigma$.
+
+%Establishing X-ray tomography as a valid approach: references for absorption correction calculations
+
+%3D plots of finding the most optimal ACs for crystal and liquor using AnACor's AC values at 0.5 acceptance percentage as the reference
+
+%This validation experiment ultimately took AC values calculated by AnACor in its pre-processing stage as a reference to run the post-processing of AnACor on a combination of AC of crystal and liquor varied in several increments from the reference. The aim of this was a check of AnACor's accuracy in determining the optimal AC that maximise the $I/ \sigma$ results while minimising the $R_{merge}$ factor.
+
+In the interest of time, this validation check was not applied to the crystals investigated in the remainder of this project. Nonetheless, the experiment is a useful validation for finding the optimal absorption coefficients from AnACor for merging statistics. The scripts for this experiment have been complied to allow for users at I23 to apply this procedure to future tomography data. %A template of the scripts can be found at GitHub.
 
 
-Establishing X-ray tomography as a valid approach: references for absorption correction calculations
+\subsection{Comparison of a spherical harmonics, analytical, and coupled approach} % empirical ?
+% to absorption corrections
+The primary focus of this project was to investigate the potential improvements in data quality by applying an analytical correction to diffraction data.
+%Merging statistics and anomalous peak heights \cite{Lu}
 
-3D plots of finding the most optimal ACs for crystal and liquor using AnACor's AC values at 0.5 acceptance percentage as the reference
 
-This validation experiment ultimately took AC values calculated by AnACor in its pre-processing stage as a reference to run the post-processing of AnACor on a combination of AC of crystal and liquor varied in several increments from the reference. The aim of this was a check of AnACor's accuracy in determining the optimal AC that maximise the $I/ \sigma$ results while minimising the $R_{merge}$ factor.
 
-In the interest of time, this validation check was not applied to the crystals investigated in the remainder of this paper. The scripts and methods for this validation have been completed so that it can be applied to future tomography data being processed at I23.
+In the interest of observing the effects of high absorption, crystal samples were largely collected at 3.0 and 3.5 keV, some of the lowest energies accessible to I23.
 
- 
-
-\subsection{Comparison of an empirical, analytical, and coupled approach to absorption corrections}
-
-Merging statistics and anomalous peak heights \cite{LuSubmitted}
+Subsequent tomography experiments were performed on two protein crystals of thermolysin. The first crystal, referred to as \ac{t1}, was collected at three energies: 3.0, 3.5, and 3.8 keV, with five to eight datasets at each energy of varying orientations of $\kappa$ and $\phi$, as listed in \cref{tbl:notes} table. The subsequent thermolysin crystal was collected only at 3.0 and 3.5 keV with four and five datasets respectively of varying orientations, also seen in cref table.
 
 \begin{figure}[h]
     \centering
     \begin{tabular}{cc}
-    \includegraphics[width = 0.5\textwidth]{plots/Experiment 1/thaum_1/I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/Experiment 1/thaum_1/rmerges.png}
+    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/3p0_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/3p0_rmerges.png}
     \end{tabular}
-    \caption{Caption}
-    \label{fig:thaum1_Isig}
+    \caption{Merging statistics for \ac{t1} at 3.0 keV.}
+    \label{fig:tlys_2_p6}
 \end{figure}
 
-In the interest of observing the effects of high absorption, subsequent crystal samples were largely collected at 3.0 and 3.5 keV, the lowest energies accessible to I23.
-
-Subsequent tomography experiments were performed on two protein crystals of thermolysin. The first crystal, referred to as \ac{t1}, was collected at three energies: 3.0, 3.5, and 3.8 keV, with five to eight datasets at each energy of varying orientations of $\kappa$ and $\phi$, as listed in cref table. The subsequent thermolysin crystal was collected only at 3.0 and 3.5 keV with four and five datasets respectively of varying orientations, also seen in cref table.
-
-Thermolysin belongs to the symmetry space group \textit{P6122}. While processing in P6122 is therefore the .
-
-Results from \ac{t2} overwhelmingly show that \ac{acsh} is the dominating correction method, with intensities peaking and the R factors dipping across every dataset.
-
-The results of 
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{cc}
+    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/3p5_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/3p5_rmerges.png}
+    \end{tabular}
+    \caption{Merging statistics for \ac{t1} at 3.5 keV.}
+    \label{fig:tlys_2_p6}
+\end{figure}
 
 \begin{figure}[h]
     \centering
     \begin{tabular}{cc}
-    \includegraphics[width = 0.5\textwidth]{plots/Experiment 1/tlys_2 P6122/3p0_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/Experiment 1/tlys_2 P6122/3p0_rmerges.png}
+    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/3p8_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/3p8_rmerges.png}
+    \end{tabular}
+    \caption{Merging statistics for \ac{t1} at 3.8 keV.}
+    \label{fig:tlys_2_p6}
+\end{figure}
+
+Merging statistics from \ac{t1} show that \ac{acsh}, which combines tomography with spherical harmonics, is on average the best approach. 
+Results from \ac{t2} overwhelmingly show this too, with \ac{acsh} being the dominating correction method across all datasets and energies. This was corroborated with the $I/\sigma$ values and the R factors.
+
+%Results from \ac{t2} overwhelmingly show that \ac{acsh} is the dominating correction method, with $I/ \sigma$ highest and the R factors dipping across every dataset.
+
+Thermolysin belongs to the symmetry space group \textit{P}6\textsubscript{1}22. While processing in \textit{P}6\textsubscript{1}22 is therefore needed for obtaining reflection information, high symmetry crystals can still be processed in low symmetry groups, such as \textit{P}\textsubscript{1}, to observe the general merging statistics of the experiment, independent of reflections.
+
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{cc}
+    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/3p0_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/3p0_rmerges.png}
     \end{tabular}
     \caption{Caption}
     \label{fig:tlys_2_p6}
 \end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{cc}
+    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/3p5_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/3p5_rmerges.png}
+    \end{tabular}
+    \caption{Caption}
+    \label{fig:tlys_2_p6}
+\end{figure}
+
+
+Datasets across the same energy processed in P\textsubscript{1} were additionally merged to increase the multiplicity of the low symmetry space group, and the results of processing \ac{t1} and \ac{t2} in P\textsubscript{1} repeat the same trend seen for \textit{P}6\textsubscript{1}22.
+
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{cc}
+    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P1/I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P1/rmerges.png}
+    \end{tabular}
+    \caption{Caption}
+    \label{fig:tlys_2_p6}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{cc}
+    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P1/I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P1/rmerges.png}
+    \end{tabular}
+    \caption{Caption}
+    \label{fig:tlys_2_p6}
+\end{figure}
+
+\subsection{Analytically-corrected Tomography data in $f"$-refinement for ion identification}
+
+%As of this year, I23 has established a new method of ion identification using anomalous scattering known as f" refinement. This protocol uses a programme known as Phenix which has a feature for estimating the f' and f" values of a given element based on the (mtz and pdb) of the collected crystal data. The f"-refinement is becoming a routinely-used feature of ion identification due to the long wavelength capabilities of the beamline. 
+
+\ac{t2} reflection data that was produced with all three correction methods in the prior experiment were then used in Phenix to test the ability of identifying atoms of sulphur and zinc in the crystal by determining their $f"$ peak.
 
 \subsection{Absorption corrections on laser-shaped samples}
 
 \begin{figure}[h]
     \centering
     \begin{tabular}{cc}
-    \includegraphics[width = 0.5\textwidth]{plots/Experiment 2 LS/ins_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/Experiment 2 LS/ins_rmerges.png}
+    \includegraphics[width = 0.5\textwidth]{plots/exp2/ins_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp2/ins_rmerges.png}
     \end{tabular}
     \caption{Caption}
     \label{fig:insulin}
@@ -60,11 +141,7 @@ Testing tomo on lysosyme to try to detect sodium anomalous signal
 
 Mention LASER-shaping already worked on identifying magnesium in topoisomerase crystals. Hypothesis: tomography can do the same
 
-\subsection{Tomography-constructed analytical models in ion identification via $f"$-refinement}
 
-As of this year, I23 has established a new method of ion identification using anomalous scattering known as f" refinement. This protocol uses a programme known as Phenix which has a feature for estimating the f' and f" values of a given element based on the (mtz and pdb) of the collected crystal data. The f"-refinement is becoming a routinely-used feature of ion identification due to the long wavelength capabilities of the beamline. 
-
-test
 
 \subsection{Errors and Improvement}
 
