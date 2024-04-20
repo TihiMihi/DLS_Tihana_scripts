@@ -1,6 +1,6 @@
 \section{Methodology}\label{sec:methodology}
 
-All experiments concerning the data collection and processing were performed at the long-wavelength MX beamline I23 at Diamond Light Source, UK. The data collection takes two experimental modes: X-ray diffraction and X-ray tomography. %data from crystal samples at the I23 endstation.
+All experiments concerning the data collection and processing were performed at the long-wavelength MX beamline I23 at Diamond Light Source, UK. The data collection takes two experimental modes: X-ray diffraction and X-ray tomography. Data processing was also carried out at beamline facilities. %data from crystal samples at the I23 endstation.
 
 \subsection{Diffraction and tomography data collection}
 
@@ -16,15 +16,21 @@ Following a diffraction experiment, the sample is kept in its in-beam position w
 \begin{figure}
     \centering
     \includegraphics{images/tomo camera.png}
-    \caption{A: Sample position; B: goniometer; C: tomography camera in retracted position; D: tomography camera in-beam position; E: viewing system; F: X-ray beam direction. Produced by Kazantsev \textit{et al.} (2021) \cite{Kazantsev2021}}
+    \caption{A: Sample position; B: goniometer; C: tomography camera in retracted position; D: tomography camera in-beam position; E: viewing system; F: X-ray beam direction. Produced by Kazantsev \textit{et al.} (2021) \cite{Kazantsev2021}.}
     \label{fig:vacuum_chamber}
 \end{figure}
 
-Diffraction and tomography collection require the user to specify the wavelength, rotation increment, exposure, and beam transmission. The relevant collection parameters for each crystal can be found in TABLE ... in the appendix.
+Diffraction collection require the user to specify the wavelength, rotation increment, and beam transmission. Likewise, the positioning of the goniometer needs to be closely surveyed to match the chosen kappa and phi angles, which also must be specified by the user for each collection. The relevant collection parameters used for each diffraction experiment on the aforementioned crystals can be found in \cref{diffration_table} in the appendix. Tomography collection also requires a specified wavelength, exposure time, 
 
-More information on the step-by-step procedure of tomography data collection at I23 is detailed in \href{https://confluence.diamond.ac.uk/x/h4HVDQ}{Tomography data collection instructions} on the Diamond Confluence page.
+Further information on the step-by-step procedure of tomography data collection at I23, as used in this work, is detailed in \href{https://confluence.diamond.ac.uk/x/h4HVDQ}{Tomography data collection instructions} on the Diamond Confluence page.
 
 \subsection{Laser-shaping in cryo-crystallography}
+% Unibody-Design fs laser
+Beamline I23 now houses a commercial femtosecond laser  that has been set up for laser-shaping crystal samples in-cryo. The product by Light Conversion is a \textbf{CARBIDE-CB5-6W} laser, with a tunable pulse duration between 190 \unit{fs} and 20 \unit{ps}, a maximum power output of 6 \unit{W}, and and an air-cooled model. The laser is also installed with the \textbf{2H} \textit{HG for CARBIDE} harmonic generator model by Light Conversion, with an output wavelength of 515 \unit{nm}, mounted on the laser head.
+%https://lightcon.com/product/carbide-femtosecond-lasers/#cb5-specifications
+%https://lightcon.com/product/harmonic-generator-for-carbide/#specifications
+
+To allow for the swift transfer of samples from a liquid nitrogen bath directly to the air-cooled goniometer set up at the femtosecond laser, the laser room used by I23 also houses \href{https://www.diamond.ac.uk/Home/Corporate-Literature/Annual-Review/Review2015/Villages/Macromolecular-Crystallography-Village/Macromolecular-Crystallography-Village-Developments/BART---the-new-robotic-sample-changer-for-MX-beamlines-at-Diamond.html}{BART}, a robotic sample changer for \ac{mx} beamlines at Diamond. The experimental setup allows for samples to be sustained at cryogenic temperatures entirely while being laser-shaped and during transfer.
 
 \subsection{Data processing pipelines, DIALS, and AnACor}
 
@@ -39,8 +45,8 @@ Tomography data can be visualised in ImageJ or in DAWN. After the completion of 
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.9\textwidth]{images/Tomo projection images CLD and Ompk high quality.png}
-    \caption{Tomography projection images of Ompk (top row) and Cld (bottom row) showing: ((a) and (d)) background,  ((b) and (e)) sample, and ((c) and (f)) flat-field corrected images. Produced by Lu \textit{et al.} (Unpublished) \cite{Lu}}
+    \includegraphics[width = 0.5\textwidth]{images/Tomo projection images CLD and Ompk high quality.png}
+    \caption{Tomography projection images of Ompk (top row) and Cld (bottom row) showing: ((a) and (d)) background,  ((b) and (e)) sample, and ((c) and (f)) flat-field corrected images. Produced by Lu \textit{et al.} (Unpublished) \cite{Lu}.}
     \label{fig:tomo projections}
 \end{figure}
 
@@ -65,15 +71,15 @@ Absorption factors used in the AnACor experiments were based on 50 \% acceptance
 
 In the post-processing stage, an absorption factor is chosen for each material, presumably from the list produced in pre-processing. By default, AnACor autofills these with 50 \% acceptance, as this tends to be the optimal percentage covering the largest area without risking overestimation of material presence. Post-processing also requires the reflection data generated by DIALS. For this reason, the reflection data must be initially produced with DIALS prior to running AnACor. In post-processing, the user can set \textit{anomalous difference} to true or false, depending on whether there is believed to be anomalous scattering. The outcome of this stage is the same as in DIALS; reflection data, along with data statistics on merging quality - the difference to DIALS is that the two sets of reflection data produced have been corrected analytically; one with \ac{sh} applied and one without.
 
-Because pre-processing does not generate new reflection data and instead only calculates experimental absorption factors, the first stage of the software can also run on samples void of diffracting material, such as an empty loop or a loop containing solvent. The advantage of this is that samples containing only or largely one type of material will produce more reliable coefficients. These values from the non-diffracting materials can then be used in the post-processing of another sample containing the same kind of solvent or loop, as well as the crystal.
+Because pre-processing does not generate new reflection data and instead only calculates experimental absorption factors, the first stage of the software can also run on samples void of diffracting material, such as an empty loop or a loop containing solvent. The advantage of this is that samples containing only or largely one type of material will produce more reliable coefficients. The outputted values for the non-diffracting materials can then be used in the post-processing of another sample containing the same kind of solvent or loop, as well as the crystal.
 
-Information on the AnACor ray-tracing algorithm applied to tomographic reconstructions is described in further detail by Lu \textit{et al.} \cite{Lu}.
+Information on the AnACor ray-tracing algorithm applied to tomographic reconstructions is described in further detail in Lu \textit{et al.} \cite{Lu}.
 
-Subsequent processing after obtaining reflection data was run with \href{http://ccp4.github.io/dimple}{Dimple}, an MX pipeline for structure refinement, provided there were anomalous scatterers of interest in the crystal. Using the known \textit{pdb} file of the protein model with the reflection data in an \textit{mtz}, Dimple calculates anomalous density (Anode) peaks from atoms in the structure. The peak heights are affected by several factors, including structural isomerism, binding ions, and water molecules contained in the pdb. While the peaks are not as reliable as merging statistics for assessing the reflection quality, Dimple likewise generates high-resolution electron density maps, as seen in cref{}, which are imperative for MX structure determination.
+Subsequent processing after obtaining reflection data is run with \href{http://ccp4.github.io/dimple}{Dimple}, an MX pipeline for structure refinement, provided there were anomalous scatterers of interest in the crystal. Using the known \textit{pdb} file of the protein model with the reflection data in an \textit{mtz}, Dimple calculates anomalous density (Anode) peaks from atoms in the structure. The peak heights are affected by several factors, including structural isomerism, binding ions, and water molecules contained in the pdb. While the peaks are not as reliable as merging statistics for assessing the reflection quality, Dimple likewise generates high-resolution electron density maps, as seen in cref{}, which are imperative for MX structure determination.
 
-Thorough information detailing the step-by-step procedure of data processing summarised in cref{} from tomography collection all the way to Dimple can be found on Diamond Confluence: \href{https://confluence.diamond.ac.uk/x/yIWuD}{Tomography data processing instructions}.
+Thorough information detailing the step-by-step procedure of data processing in this work, from collection to running Dimple, can be found on Diamond Confluence: \href{https://confluence.diamond.ac.uk/x/yIWuD}{Tomography data processing instructions}. %summarised in cref{}
 
-\subsection{Phenix $f"$-refinement for ion identification}
+%\subsection{Phenix $f"$-refinement for ion identification}
 
 \subsection{Merging statistics: R factor, intensities and estimated uncertainties}
 
@@ -99,6 +105,3 @@ It was therefore in the interest of the following experiments to maximise the $I
 
 Two other complementary indicators for assessing diffraction data quality are the resolution and completeness. The data completeness is defined by the number of reflections collected compared to the number of theoretically possible reflections for a given crystal symmetry \cite{Arkhipova2017}. This could range from ... Since each reflection contributes to the electron-density map, the completeness heavily determines the quality of maps \cite{Wlodawer2007}.
 
-%\subsection{Anomalous Density Peaks}
-
-%Dimple pipeline (http://ccp4.github.io/dimple/) 
