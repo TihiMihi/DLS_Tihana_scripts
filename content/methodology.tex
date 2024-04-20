@@ -9,7 +9,7 @@ Sample preparation for in-vacuum data collection followed the standard procedure
 
 The in-vacuum sample environment contains a cylindrical P12M detector as well as a multi-axis goniometer to enable collection  in multiple orientations; this provides access to high multiplicity in addition to just high repetition, which improves data completeness \cite{Finke2016}. The axes of orientation are a kappa and phi angle. %(illustrated PICTURE)
 
-Each diffraction experiments carried out on the protein crystals in this study collected a full set of data, meaning that 360$\degree$ of data was collected. The diffraction data was automatically integrated with DIALS which provides the raw intensities, incident vectors, scattering vectors, and goniometer angles.
+Each diffraction experiments carried out on the protein crystals in this study collected a full set of data, meaning that 360$\degree$ of data was collected. The diffraction data was automatically integrated with DIALS \cite{Winter2018} which provides the raw intensities, incident vectors, scattering vectors, and goniometer angles.
 
 Following a diffraction experiment, the sample is kept in its in-beam position while the tomography camera is moved out of its retracted position to immediately start tomography collection. The order of the experiments is important because radiation damage will affect the higher resolution information first. A tomography camera is integrated into the sample environment to allow for a simple transition between the experimental modes \cite{Kazantsev2021}, as seen in \cref{fig:vacuum_chamber}.
 
@@ -20,13 +20,15 @@ Following a diffraction experiment, the sample is kept in its in-beam position w
     \label{fig:vacuum_chamber}
 \end{figure}
 
-Diffraction collection require the user to specify the wavelength, rotation increment, and beam transmission. Likewise, the positioning of the goniometer needs to be closely surveyed to match the chosen kappa and phi angles, which also must be specified by the user for each collection. The relevant collection parameters used for each diffraction experiment on the aforementioned crystals can be found in \cref{diffration_table} in the appendix. Tomography collection also requires a specified wavelength, exposure time, 
+Diffraction collection require the user to specify the energy, rotation increment, and beam transmission. Likewise, the positioning of the goniometer needs to be closely surveyed to match the chosen kappa and phi angles, which also must be specified by the user for each collection. The number of datasets of one crystal corresponds to the diffraction experiments at the same energy using varying orientations of kappa and phi. The relevant collection parameters used for each diffraction experiment on the aforementioned crystals can be found in \cref{diffration_table} in the appendix.
+
+Tomography collection also requires a specified energy, exposure time, and sample orientation. While the energy of tomography scans used for the segmentation model does not need to match the experimental diffraction data they are used for, the projection images (also known as flat-fields) should be applied to a dataset with a matching energy. To therefore ensure the matching of diffraction and tomography experiments, tomography is collected at every energy that diffraction was collected at, with kappa and phi typically set to zero. The tomography parameters used in these experiments can be found in \cref{tomo_table} in Appendix B.
 
 Further information on the step-by-step procedure of tomography data collection at I23, as used in this work, is detailed in \href{https://confluence.diamond.ac.uk/x/h4HVDQ}{Tomography data collection instructions} on the Diamond Confluence page.
 
 \subsection{Laser-shaping in cryo-crystallography}
 % Unibody-Design fs laser
-Beamline I23 now houses a commercial femtosecond laser  that has been set up for laser-shaping crystal samples in-cryo. The product by Light Conversion is a \textbf{CARBIDE-CB5-6W} laser, with a tunable pulse duration between 190 \unit{fs} and 20 \unit{ps}, a maximum power output of 6 \unit{W}, and and an air-cooled model. The laser is also installed with the \textbf{2H} \textit{HG for CARBIDE} harmonic generator model by Light Conversion, with an output wavelength of 515 \unit{nm}, mounted on the laser head.
+Beamline I23 now houses a commercial femtosecond laser  that has been set up for laser-shaping crystal samples in-cryo. The product by Light Conversion is a \textbf{CARBIDE-CB5-6W} laser, with a tunable pulse duration between 190 \unit{fs} and 20 \unit{ps}, a maximum power output of 6 \unit{W}, and an air-cooled model. The laser is also installed with the \textbf{2H} \textit{HG for CARBIDE} harmonic generator model by Light Conversion, with an output wavelength of 515 \unit{nm}, mounted on the laser head.
 %https://lightcon.com/product/carbide-femtosecond-lasers/#cb5-specifications
 %https://lightcon.com/product/harmonic-generator-for-carbide/#specifications
 
@@ -34,7 +36,7 @@ To allow for the swift transfer of samples from a liquid nitrogen bath directly 
 
 \subsection{Data processing pipelines, DIALS, and AnACor}
 
-Following collection, diffraction data was integrated with DIALS for scaling and merging. DIALS is the standard practice data reduction software at Diamond Light Source that uses SH to produce reflection data in the form of an \textit{mtz} file. This likewise calculates the merging statistics that provide information on merged data quality.% $I/ \sigma$ and $R_{merge}$ values.
+Following collection, diffraction data was integrated with DIALS for scaling and merging. DIALS is the standard practice data reduction software at Diamond Light Source that uses SH to produce reflection data in the form of an \textit{MTZ} file. This likewise calculates the merging statistics that provide information on merged data quality.% $I/ \sigma$ and $R_{merge}$ values.
 
 %Once the merging statistics have been obtained, the reflection data is also produced .
 %Further experiments can be run with \href{http://ccp4.github.io/dimple}{Dimple}, an MX pipeline for structure refinement, provided there are anomalous scatterers in the crystal. Using the known \textit{pdb} file of the protein model with the reflection data in an \textit{mtz}, Dimple calculates anomalous density (Anode) peaks from atoms in the structure. The peak heights are affected by several factors, including structural isomerism, binding ions, and water molecules contained in the pdb. While they are not as reliable as merging statistics for assessing the reflection quality, they are used to generate high-resolution electron density maps, as seen in cref{}, which is imperative for MX structure determination.
@@ -59,11 +61,12 @@ Following reconstruction in SAVU, the tomography images in the form of 32-bit tw
     %\label{fig:Avizo}
 %\end{figure}
 
-The final step to tomography processing is done in AnACor, a ray-tracing software that has been developed collaboratively between I23, Graeme Winter at Diamond Light Source, and Yishun Lu at the Department of Engineering, University of Oxford. AnACor calculates the absorption factors for materials in an analytical 3D model with a discrete form of \cref{AbsFactor}, where the integral over crystal elements $dV$ is replaced with a sum over the crystal voxels $\Delta V$ from  reconstruction \cite{Lu}: %applies an analytical absorption correction strategy based on the 3D model of the sample derived from X-ray tomography.
+The final step to tomography processing is done in AnACor, where the X-ray path lengths are traced through the constructed model to determine the final experimental absorption factors.
+%, a ray-tracing software that has been developed collaboratively between I23, Graeme Winter at Diamond Light Source, and Yishun Lu at the Department of Engineering, University of Oxford. AnACor calculates the absorption factors for materials in an analytical 3D model with a discrete form of \cref{AbsFactor}, where the integral over crystal elements $dV$ is replaced with a sum over the crystal voxels $\Delta V$ from  reconstruction \cite{Lu}: %applies an analytical absorption correction strategy based on the 3D model of the sample derived from X-ray tomography.
 
-\begin{equation}
-    A_{\hkl} = \frac{1}{N} \sum_{n=1}^N A_{\hkl}^{(n)}
-\end{equation}
+%\begin{equation}
+    %A_{\hkl} = \frac{1}{N} \sum_{n=1}^N A_{\hkl}^{(n)}
+%\end{equation}
 % which visualises provisional 3D models
 AnACor runs in two stages: pre-processing and post-processing. In the pre-processing stage, the user collects the 3D-segmentation labels exported from Avizo and the cropped flat-field images, and feeds these into AnACor to produce a threshold of the sample highlighting where it has high confidence in the presence of a certain percentage of each material. The outcome of pre-processing is a list of absorption factors that are based on where it believes 25\%, 50\%, 75\%, and 100\% of each material lies - this is known as the acceptance percentage. A lower acceptance percentage corresponds to higher confidence, and vice versa. % acceptance of the presence
 
@@ -75,7 +78,8 @@ Because pre-processing does not generate new reflection data and instead only ca
 
 Information on the AnACor ray-tracing algorithm applied to tomographic reconstructions is described in further detail in Lu \textit{et al.} \cite{Lu}.
 
-Subsequent processing after obtaining reflection data is run with \href{http://ccp4.github.io/dimple}{Dimple}, an MX pipeline for structure refinement, provided there were anomalous scatterers of interest in the crystal. Using the known \textit{pdb} file of the protein model with the reflection data in an \textit{mtz}, Dimple calculates anomalous density (Anode) peaks from atoms in the structure. The peak heights are affected by several factors, including structural isomerism, binding ions, and water molecules contained in the pdb. While the peaks are not as reliable as merging statistics for assessing the reflection quality, Dimple likewise generates high-resolution electron density maps, as seen in cref{}, which are imperative for MX structure determination.
+Subsequent processing after obtaining reflection data is run with \href{http://ccp4.github.io/dimple}{Dimple}, an MX pipeline for structure refinement, provided there are anomalous scatterers of interest in the crystal. Using the known \ac{pdb} format modelling atomic coordinates with the reflection data stored in \textit{MTZ} file format, Dimple calculates anomalous density (Anode) peaks from atoms in the structure. The peak heights are affected by several factors, including structural isomerism, binding ions, and water molecules contained in the \ac{pdb}. While the peaks are not as reliable as merging statistics for assessing the reflection quality, Dimple likewise generates high-resolution electron density maps, as seen in cref{}, which are imperative for MX structure determination.
+%MTZ file format is used for the storage of reflection data
 
 Thorough information detailing the step-by-step procedure of data processing in this work, from collection to running Dimple, can be found on Diamond Confluence: \href{https://confluence.diamond.ac.uk/x/yIWuD}{Tomography data processing instructions}. %summarised in cref{}
 
@@ -83,7 +87,7 @@ Thorough information detailing the step-by-step procedure of data processing in 
 
 \subsection{Merging statistics: R factor, intensities and estimated uncertainties}
 
-In diffraction experiments, the data quality is usually assessed by the global $R_{merge}$ factor based on the reflection intensities. $R_{merge}$ is a measure of the average ratio of the spread of symmetry-equivalent reflection intensities to the estimated value of reflection intensity \cite{Dauter1999}:
+When reflection data is scaled, data reduction software such as DIALS also provide a range of statistical parameters, including completeness, multiplicity, and reflection intensities. In diffraction experiments, the data quality is usually assessed by the global $R_{merge}$ factor based on the reflection intensities. $R_{merge}$ is a measure of the average ratio of the spread of symmetry-equivalent reflection intensities to the estimated value of reflection intensity \cite{Dauter1999}:
 
 \begin{equation}
     R_{merge} = \sum_{\hkl}\sum_i | I_{\hkl,i} - \langle I_{\hkl} \rangle | / \sum_{\hkl} \langle I_{\hkl} \rangle
@@ -103,5 +107,6 @@ Here, the $\sigma$ values are not trivially estimated and are usually computed i
 
 It was therefore in the interest of the following experiments to maximise the $I / \sigma$ values while minimising the $R_{merge}$ factors. These were the main parameters used in the assessment of data quality throughout this project.
 
-Two other complementary indicators for assessing diffraction data quality are the resolution and completeness. The data completeness is defined by the number of reflections collected compared to the number of theoretically possible reflections for a given crystal symmetry \cite{Arkhipova2017}. This could range from ... Since each reflection contributes to the electron-density map, the completeness heavily determines the quality of maps \cite{Wlodawer2007}.
+Two other complementary indicators for assessing diffraction data quality are the resolution and completeness. The data completeness is defined by the number of reflections collected compared to the number of theoretically possible reflections for a given crystal symmetry \cite{Arkhipova2017}. %This could range from ...
+Since each reflection contributes to the electron-density map, the completeness heavily determines the quality of maps \cite{Wlodawer2007}.
 
