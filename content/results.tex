@@ -1,22 +1,28 @@
 \section{Results and Discussion}
 
-The scope of experiments in this project involve extensive use of AnACor, the prototype software used at beamline I23 for adding an analytical correction to reflections and reflection intensities \cite{Lu}. Previous work from I23 has documented the successes of tomographic reconstruction and segmentation pipelines to determine analytical absorption factors \cite{Kazantsev2021}; however, AnACor has only recently become the routine for this. The software is still in its developing stages with many reoccurring errors which limit our ability to do data processing and the reliability of results. Validation of the experimental results is therefore still necessary when possible.
+The scope of experiments in this project involve extensive use of AnACor, the prototype software used at beamline I23 for adding an analytical correction to reflections and reflection intensities \cite{Lu}. Previous work from I23 has documented the successes of tomographic reconstruction and segmentation pipelines to determine analytical absorption factors \cite{Kazantsev2021}, while AnACor has only recently become the routine for this.
 
-One example of a step taken to improve reliability in this project is when samples containing solely the mother-liquor that crystals were grown in were available, tomography data would be collected on these as well as the crystal samples. The segmentation of loops containing only liquor allow for more reliable thresholds to be applied with fewer materials to account for, and therefore produces more accurate coefficients.
+A recent publication from I23 and Lu \textit{et al.} \cite{Lu2024} introduces the successful application of analytical absorption corrections based on the 3D-reconstructions from X-ray tomography implemented in AnACor. This paper describes two long-wavelength experiments performed on proteins of chlorite dismutase (Cld) and the membrane protein OmpK36 GD; their results indicating that this approach substantially improves data quality 
 
-Since low-energy tomographic scans are prone to high contrast artefacts which limit visibility in the segmentation, tomography scans intended for diffraction experiments collected at or below 3 \unit{keV} would be collected at 3.5 \unit{keV}, in addition to the low energy. Distinguishing between materials in the 3.5 \unit{keV} tomography scans is somewhat easier, and therefore provides better segmentation for the reflection data collected at lower energies.
+Since AnACor is still in development, reoccurring errors occasionally limit our ability to complete data processing and the consistency of results. Validation of the outputted results is therefore still necessary at every stage, and further steps are taken when possible to improve reliability.
+
+When samples containing solely the mother-liquor that crystals were grown in were available, tomography data would be collected on these as well as the crystal samples. This is an example of an optional step taken to improve the reliability of calculating absorption factors. The segmentation of loops containing only liquor allow for more reliable thresholds to be applied as there are fewer materials to account for, and therefore the liquor coefficient is expected to be more precise.
+
+Since low-energy tomographic scans are prone to high contrast artefacts which limit visibility in the segmentation, tomography scans, that would follow diffraction experiments collected at or below 3 \unit{keV}, would often be collected at 3.5 \unit{keV} as well as the low energy. Distinguishing between materials in the 3.5 \unit{keV} projections is somewhat easier, and therefore provides better segmentation for the reflection data collected at lower energies.
 
 %Finally ... preliminary tests
 
 \subsection{Preliminary tests on AnACor}
 
-Because the final reflection data heavily relies on the accuracy of absorption factors, the first experiments conducted for this project were a validation of the accuracy of AnACor's pre-process calculations. Theoretical absorption coefficients are given by the reciprocal of the attenuation length, which can be calculated for a material from its chemical formula, density, and the energy in question. The first experiment on AnACor used crystals of ethylene glycol and santovac to compare experimentally calculated coefficients from the software with theoretical coefficients.
 
-The experimental coefficients of santovac, published in \cref{santovac_table}, are within 1.5 \% of the theoretical value for energies between 3 and 4.5 \unit{keV}. This difference, however, appears to grow with energy, with a nearly 7\% difference at 6 \unit{keV}. A similar trend is seen in \cref{ethylene_table} with the sudden jump from 1.2 \% at 5 \unit{keV} to 6.3 \% at 6 \unit{keV} for ethylene glycol.
 
-Judging from the results of these two proteins alone, AnACor appears to overestimate coefficients at higher energies and similarly underestimates coefficients at lower energies. A possible explanation for the latter is the effect of high contrast at low energies limiting distinctions between materials; this however does not explain the overestimates at higher energies. It is also possible that the calculations do not sufficiently account for the changing dependence of absorption on wavelength, which is less strong at higher energies and would explain the the discrepancies.
+Because the final reflection data heavily relies on the accuracy of absorption factors, the first experiments conducted for this project were a validation of the accuracy of AnACor's pre-process calculations. Theoretical absorption coefficients are given by the reciprocal of the attenuation length, which can be calculated for a material from its chemical formula, density, and the energy in question. The first experiment on AnACor used crystals of ethylene glycol (\ce{(CH2OH)2}) and santovac, a five ring polyphenyl ether (\ce{C30H22O4}), to compare experimentally calculated absorption coefficients from the software with theoretical coefficients.
 
-A second validation experiment on AnACor involved samples of chlorite dismutase (Cld) and the membrane protein OmpK36 GD. Data on these two samples has already been analysed in Lu \textit{et al.} \cite{Lu} to compare the same approaches for absorption corrections discussed in this work: a \ac{sh} correction, analytical, and a combination of the two. The aim of this subsequent experiment, was to assess the accuracy of the absorption coefficients of crystal and liquor published in this paper. This was tested with the assumption that the accuracy would correlate to the best possible data quality, where the intensity to uncertainty ($I / \sigma$) peaks and the $R_{merge}$ factors are diminished.
+The experimental coefficients of santovac, published in \cref{santovac_table} in Appendix A2, are within 1.5 \% of the theoretical value for energies between 3 and 4.5 \unit{keV}. This difference, however, appears to grow with energy, with a nearly 7\% difference at 6 \unit{keV}. A similar trend is seen in \cref{ethylene_table} in Appendix A2, with the sudden jump from 1.2 \% at 5 \unit{keV} to 6.3 \% at 6 \unit{keV} for ethylene glycol.
+
+Assessing from the results of these two proteins, AnACor appears to overestimate coefficients at higher energies and similarly underestimates coefficients at lower energies. A possible explanation for the latter is the effect of high contrast at low energies limiting distinctions between materials; this however does not explain the overestimates at higher energies. It is also possible that the calculations do not sufficiently account for the changing dependence of absorption on wavelength, which is less strong at higher energies and would explain the the discrepancies.
+
+A second validation experiment on AnACor involved samples of chlorite dismutase (Cld) and the membrane protein OmpK36 GD. Data on these two samples has already been analysed in Lu \textit{et al.} \cite{Lu} to compare the same approaches for absorption corrections discussed in this work: a \ac{sh} correction, analytical, and a combination of the two. The aim of this subsequent experiment, was to determine the accuracy of the absorption coefficients of crystal and liquor published in this paper. This was assessed with the assumption that the accuracy would correlate to the best possible data quality, where the intensity to uncertainty ratios ($I / \sigma$) peak and the $R_{merge}$ factors are diminished.
 
 Taking the coefficients published in this paper as a reference and varying both in intervals of \pm 10, sets up a variety of possible combinations of coefficient pairs which can together elucidate the optimal amount of variation in both for improving the merging statistics. The coefficients were varied from -20 \% to + 20 \%; after preliminary results were collected, the liquor coefficients were varied a further interval up to + 30 \%, giving a total of 30 possible coefficient variations. %The crystal reference was
 
@@ -41,67 +47,65 @@ The primary focus of this project was to investigate the potential improvements 
 %Merging statistics and anomalous peak heights \cite{Lu}
 In the interest of observing the effects of high absorption, crystal samples were largely collected at 3.0 and 3.5 \unit{keV}, some of the lowest energies accessible to I23.
 
-The first sample to be used for this investigation was a test crystal of thaumatin, collected at 3.0, 3.5, 4.0, and 4.5 \unit{keV}. Because this early experiment was used primarily for segmentation practice, the results for the merging statistics can be found in the Appendix in \cref{fig:thaum1_stats}. Despite the segmentation being a rough model, the analytical approach already showed an improvement from \ac{sh}, with the two datasets at lower energies favouring \ac{acsh}, and the remaining datasets favouring \ac{ac}.
+The first sample to be used for this investigation was a test crystal of thaumatin, collected at 3.0, 3.5, 4.0, and 4.5 \unit{keV}. Because this early experiment was used primarily for segmentation practice, the results for the merging statistics can be found in Appendix A3 in \cref{fig:thaum1_stats}. Despite the segmentation being a rough model, the analytical approach already showed an improvement from \ac{sh}, with the two datasets at lower energies favouring \ac{acsh}, and the remaining datasets favouring \ac{ac}.
+
+Subsequent tomography experiments were performed on two protein crystals of thermolysin, a thermostable metalloproteinase. The first crystal, referred to as Thermolysin 1, was collected at three energies: 3.0, 3.5, and 3.8 \unit{keV}, with datasets of varying orientations of $\kappa$ and $\phi$ at each energy, as listed in \cref{diffration_table} in Appendix A2. The subsequent thermolysin crystal was collected only at 3.0 and 3.5 \unit{keV} with the $\kappa$ and $\phi$ orientations specified in the same table.
 
 \begin{figure}[h]
     \centering
-    \begin{tabular}{cc}
-    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/3p0_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/3p0_rmerges.png}
-    \end{tabular}
+    \includegraphics{plots/exp1/tlys_9_P6122/3p0_stats_grid.pdf}
     \caption{Merging statistics for Thermolysin 1 at 3.0 \unit{keV}.}
     \label{fig:tlys_9_3p0}
 \end{figure}
 
-Subsequent tomography experiments were performed on two protein crystals of thermolysin. The first crystal, referred to as Thermolysin 1, was collected at three energies: 3.0, 3.5, and 3.8 \unit{keV}, with datasets of varying orientations of $\kappa$ and $\phi$ at each energy, as listed in \cref{diffration_table}. The subsequent thermolysin crystal was collected only at 3.0 and 3.5 \unit{keV} with the $\kappa$ and $\phi$ orientations also specified in \cref{diffration_table}.
-
 \begin{figure}
     \centering
-    \begin{tabular}{cc}
-    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/3p5_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/3p5_rmerges.png}
-    \end{tabular}
+    \includegraphics{plots/exp1/tlys_9_P6122/3p5_stats_grid.pdf}
     \caption{Merging statistics for Thermolysin 1 at 3.5 \unit{keV}.}
     \label{fig:tlys_9_3p5}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \begin{tabular}{cc}
-    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/3p8_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/3p8_rmerges.png}
-    \end{tabular}
+    \includegraphics{plots/exp1/tlys_9_P6122/3p8_stats_grid.pdf}
     \caption{Merging statistics for Thermolysin 1 at 3.8 \unit{keV}.}
     \label{fig:tlys_9_3p8}
 \end{figure}
 
 Taking into account both the increase in $I/\sigma$ and decrease in $R_{merge}$, the merging statistics from Thermolysin 1 showed that \ac{acsh}, which combines tomography with spherical harmonics, was on average the best approach. While this was the case for every dataset of Thermolysin 1, some instances showed only a small improvement compared to \ac{sh}. Likewise, the standalone analytical approach was on average worse than \ac{sh} as well as \ac{acsh}.
 
-Changes in energy are not expected to affect the reflection data in a relevant way; however, energies that were collected subsequently are expected to be more affected by radiation damage from longer exposure to the beam. If segmentation was then performed on a dataset collected early on in the tomography experiment, there can be discrepancies between the analytical model and a more-so radiation-damaged dataset.
+Changes in energy are not expected to affect the reflection data; however, datasets that were collected subsequently on the crystal are more susceptible to radiation damage from longer exposure to the beam. If segmentation was then performed on a dataset collected early on in the tomography experiment, there can be discrepancies between the analytical model and a more-so radiation-damaged dataset.
 
 %Following collection of reflection data, the AnACor results are used for structure refinement in Dimple, which generates anomalous density peaks for all the detected anomalous atoms and molecules based on the provided model. The results of Thermolysin 1
 
-The merging statistics for Thermolysin 2, seen in \cref{fig:tlys_2_3p0} and \cref{fig:tlys_2_3p5} overwhelmingly show the same trend, with \ac{acsh} being the dominating correction method across all datasets and energies. This was corroborated with the $I/\sigma$ values and the R factors.
+The merging statistics for individual datasets of Thermolysin 2 are shown in Appendix A3 in \cref{fig:tlys_2_3p0} and \cref{fig:tlys_2_3p5}. Since there were no clear outliers, all datasets with common energies were once again merged to produce the results shown in \cref{fig:tlys_2_stats}. Both parameters overwhelmingly show the same trend, with \ac{acsh} being the dominating correction method across all datasets and energies. This was corroborated with the $I/\sigma$ values and the R factors.
 %that \ac{acsh} is once again the best correction method
 %Results from Thermolysin 2 overwhelmingly show that \ac{acsh} is the dominating correction method, with $I/ \sigma$ highest and the R factors dipping across every dataset.
 
-\begin{figure}[h]
+\begin{figure}
     \centering
-    \begin{tabular}{cc}
-    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/3p0_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/3p0_rmerges.png}
-    \end{tabular}
+    \includegraphics{plots/exp1/tlys_2_P6122/merged_stats.pdf}
+    \caption{Merging statistics for Thermolysin 2 at 3.0 and 3.5 \unit{keV}.}
+    \label{fig:tlys_2_stats}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.8\textwidth]{plots/exp1/tlys_2_P6122/3p0_stats_grid.pdf}
     \caption{Merging statistics for Thermolysin 2 at 3.0 \unit{keV}.}
     \label{fig:tlys_2_3p0}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}
     \centering
-    \begin{tabular}{cc}
-    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/3p5_I_over_sigma.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/3p5_rmerges.png}
-    \end{tabular}
+    \includegraphics[width = 0.8\textwidth]{plots/exp1/tlys_2_P6122/3p5_stats_grid.pdf}
     \caption{Merging statistics for Thermolysin 2 at 3.5 \unit{keV}.}
     \label{fig:tlys_2_3p5}
 \end{figure}
 
-Following collection of reflection data, the AnACor results are used for structure refinement in Dimple to generate anomalous density peaks for all the detected anomalous atoms and molecules, based on the provided model. In thermolysin, the relevant anomalous groups are two conformations of methionine (205 and 120), and a zinc atom. The results for Thermolysin 1 can be found in \cref{fig:tlys9_met_peaks_3p0}, \cref{fig:tlys9_met_peaks_3p5}, \cref{fig:tlys9_met_peaks_3p8}, \cref{fig:tlys9_zn_peaks_3p8}, \cref{fig:tlys9_zn_peaks_3p0_3p5} and for Thermolysin 2 in \cref{fig:tlys2_met_peaks_3p0}, \cref{fig:tlys2_met_peaks_3p5}, and \cref{fig:tlys2_zn_peaks}.% and \cref{fig:tlys2_met_peaks_3p5}.
-While the heights of anomalous peaks are not a direct indicator of precision or quality, we can once again see that the coupled approach amplifies the detected anomalous signal from these groups.
+Following collection of reflection data, the AnACor results are used for structure refinement in Dimple to generate anomalous density peaks for all the detected anomalous atoms and molecules, based on the provided model. In thermolysin, the relevant anomalous groups are two methionine groups in positions 205 and 120 of the polypeptide chain of amino acid residuals \cite{CLAUDIO1984}, and a zinc atom. The results for individual datasets of Thermolysin 1 can be found in \cref{fig:tlys9_met_peaks_3p0,fig:tlys9_met_peaks_3p5,fig:tlys9_met_peaks_3p8,fig:tlys9_zn_peaks_3p0_3p5,fig:tlys9_zn_peaks_3p8}, and for Thermolysin 2 in \cref{fig:tlys2_met_peaks_3p0,fig:tlys2_met_peaks_3p5,fig:tlys2_zn_peaks} in Appendix A3.% and \cref{fig:tlys2_met_peaks_3p5}.
+
+%While the heights of anomalous peaks are not a direct indicator of precision or quality, we can once again see that the coupled approach amplifies the detected anomalous signal from these groups.
 
 Thermolysin crystallises in symmetry space group \textit{P}6\textsubscript{1}22. While processing in \textit{P}6\textsubscript{1}22 is therefore needed for obtaining reflection information, high symmetry crystals can still be processed in low symmetry groups, such as \textit{P}\textsubscript{1}, to observe the general merging statistics of the experiment, independent of reflections.
 Datasets across the same energy processed in \textit{P}\textsubscript{1} were merged to increase the multiplicity of the low symmetry space group, and the results of processing Thermolysin 1 and Thermolysin 2 in \textit{P}\textsubscript{1} repeat the same trend seen for \textit{P}6\textsubscript{1}22.
@@ -147,7 +151,7 @@ In the case of sulphur, it appears that this is no longer the case. While \ac{ac
 
 Given that this experiment has only been performed on one crystal, it would be of interest to see whether this behaviour is seen again in $f"$-refinement at long wavelength with other crystals and atom types. %Another potential experiment would be to test if 
 
-\subsection{Tomography-based corrections with laser-shaped samples}
+\subsection{Analytical tomography corrections with laser-shaped samples}
 
 Following the experiments that showed the successes of tomographic reconstruction and segmentation corrections, the next question to investigate was about its compatibility with another form of absorption correction. Laser-shaping has previously been used in cryogenic \ac{mx} to remove the non-diffracting material contributing to background noise, thus improving the diffraction quality and likewise the standard \ac{sh} absorption corrections that only assume for the diffracting material in a sample.
 
@@ -190,6 +194,7 @@ Previous studies done on tomography-based analytical corrections have focused on
 
 %Mention LASER-shaping already worked on identifying magnesium in topoisomerase crystals. Hypothesis: tomography can do the same
 
+\subsection{Detecting sodium in lysozyme with analytical tomography corrections}
 
 
 \subsection{Errors and Improvement}
