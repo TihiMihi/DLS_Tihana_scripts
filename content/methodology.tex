@@ -1,6 +1,6 @@
 \section{Methodology}\label{sec:methodology}
 
-All experiments concerning the data collection and processing were performed at the long-wavelength MX beamline I23 at Diamond Light Source, UK. The data collection takes two experimental modes: X-ray diffraction and X-ray tomography. Data processing was also carried out at beamline facilities. %data from crystal samples at the I23 endstation.
+All experiments concerning the data collection and processing were performed at the long-wavelength \ac{mx} beamline I23 at Diamond Light Source, UK. The data collection takes two experimental modes: X-ray diffraction and X-ray tomography. Data processing was also carried out at beamline facilities. %data from crystal samples at the I23 endstation.
 
 \subsection{Diffraction and tomography data collection}
 
@@ -20,9 +20,9 @@ Following a diffraction experiment, the sample is kept in its in-beam position w
     \label{fig:vacuum_chamber}
 \end{figure}
 
-Diffraction collection require the user to specify the energy, rotation increment, and beam transmission. Likewise, the positioning of the goniometer needs to be closely surveyed to match the chosen kappa and phi angles, which also must be specified by the user for each collection. The number of datasets of one crystal corresponds to the diffraction experiments at the same energy using varying orientations of kappa and phi. The relevant collection parameters used for each diffraction experiment on the aforementioned crystals can be found in \cref{diffration_table} in the appendix.
+Diffraction collection require the user to specify the energy, rotation increment, and beam transmission. Likewise, the positioning of the goniometer needs to be closely surveyed to match the chosen kappa and phi angles, which also must be specified by the user for each collection. The number of datasets of one crystal corresponds to the diffraction experiments at the same energy using varying orientations of kappa and phi. The relevant collection parameters used for each diffraction experiment on the aforementioned crystals can be found in \cref{diffration_table} in appendix A2.
 
-Tomography collection also requires a specified energy, exposure time, and sample orientation. While the energy of tomography scans used for the segmentation model does not need to match the experimental diffraction data they are used for, the projection images (also known as flat-fields) should be applied to a dataset with a matching energy. To therefore ensure the matching of diffraction and tomography experiments, tomography is collected at every energy that diffraction was collected at, with kappa and phi typically set to zero. The tomography parameters used in these experiments can be found in \cref{tomo_table} in Appendix B.
+Tomography collection also requires a specified energy, exposure time, and sample orientation. While the energy of tomography scans used for the segmentation model does not need to match the experimental diffraction data they are used for, the projection images (also known as flat-fields) should be applied to a dataset with a matching energy. To therefore ensure the matching of diffraction and tomography experiments, tomography is collected at every energy that diffraction is collected at, with $\kappa$ and $\phi$ typically set to zero. The tomography parameters used in these experiments can be found in \cref{tomo_table} in Appendix A2.
 
 Further information on the step-by-step procedure of tomography data collection at I23, as used in this work, is detailed in \href{https://confluence.diamond.ac.uk/x/h4HVDQ}{Tomography data collection instructions} on the Diamond Confluence page.
 
@@ -32,7 +32,7 @@ Beamline I23 now houses a commercial femtosecond laser  that has been set up for
 %https://lightcon.com/product/carbide-femtosecond-lasers/#cb5-specifications
 %https://lightcon.com/product/harmonic-generator-for-carbide/#specifications
 
-To allow for the swift transfer of samples from a liquid nitrogen bath directly to the air-cooled goniometer set up at the femtosecond laser, the laser room used by I23 also houses \href{https://www.diamond.ac.uk/Home/Corporate-Literature/Annual-Review/Review2015/Villages/Macromolecular-Crystallography-Village/Macromolecular-Crystallography-Village-Developments/BART---the-new-robotic-sample-changer-for-MX-beamlines-at-Diamond.html}{BART}, a robotic sample changer for \ac{mx} beamlines at Diamond. The experimental setup allows for samples to be sustained at cryogenic temperatures entirely while being laser-shaped and during transfer.
+To allow for the swift transfer of samples from a liquid nitrogen bath directly to the air-cooled goniometer at the femtosecond laser, the laser room used by I23 also houses \href{https://www.diamond.ac.uk/Home/Corporate-Literature/Annual-Review/Review2015/Villages/Macromolecular-Crystallography-Village/Macromolecular-Crystallography-Village-Developments/BART---the-new-robotic-sample-changer-for-MX-beamlines-at-Diamond.html}{BART}, a robotic sample changer for \ac{mx} beamlines at Diamond. The experimental setup allows for samples to be sustained at cryogenic temperatures during transfer and experiment.
 
 \subsection{Data processing pipelines, DIALS, and AnACor}
 
@@ -43,16 +43,16 @@ Following collection, diffraction data was integrated with DIALS for scaling and
 
 The alternative to DIALS in generating reflection data is taken using X-ray tomography, which is a longer, multi-step process as it currently entails manually reconstructing the sample model.
 
-Tomography data can be visualised in ImageJ or in DAWN. After the completion of every tomography scan, the data would be processed using the SAVU pipeline \cite{Kazantsev2022}. The processing routine here first required determination of the centre of rotation to align the tomography images; after this was a flat-field correction, followed by ring-artefact removal and reconstruction. Images were also cropped according to necessity to remove as much background as possible. The final output from SAVU provides two types of reconstructed images: the flat fields (face-on view of the sample), and the tomography slices (stacked along the long axis of the sample). Examples of the flat-field images, raw projections, and flat-field corrected projections are shown in \cref{fig:tomo projections}.
+Tomography data can be visualised in \textit{ImageJ} or in \textit{DAWN}. After the completion of every tomography scan, the data is processed using the SAVU pipeline \cite{Kazantsev2022}. The processing routine here first requires determination of the centre of rotation to align the tomography images; after this is a flat-field correction, followed by ring-artefact removal and reconstruction. Images are also cropped to remove as much background as possible. The final output from SAVU provides two types of reconstructed images: the flat fields (face-on view of the sample), and the tomography slices (stacked along the long axis of the sample). Examples of the flat-field images, raw projections, and flat-field corrected projections are shown in \cref{fig:tomo projections}.
 
 \begin{figure}
     \centering
     \includegraphics[width = 0.5\textwidth]{images/Tomo projection images CLD and Ompk high quality.png}
-    \caption{Tomography projection images of Ompk (top row) and Cld (bottom row) showing: ((a) and (d)) background,  ((b) and (e)) sample, and ((c) and (f)) flat-field corrected images. Produced by Lu \textit{et al.} (Unpublished) \cite{Lu}.}
+    \caption{Tomography projection images of Ompk (top row) and Cld (bottom row) showing: ((a) and (d)) background,  ((b) and (e)) sample, and ((c) and (f)) flat-field corrected images. Produced by Lu \textit{et al.} (Unpublished) \cite{Lu2024}.}
     \label{fig:tomo projections}
 \end{figure}
 
-Following reconstruction in SAVU, the tomography images in the form of 32-bit two-dimensional tiff files were converted to 8-bit data to reduce the data size. The 8-bit data was then imported and manually segmented in the visualisation software Avizo (Thermo Fisher) to distinguish between the different materials. The segmentation annotates every voxel in each tomography slice to a sample material or to the background, which in turn produces a detailed 3D sample model.
+Following reconstruction in SAVU, the tomography images in the form of 32-bit two-dimensional \textit{tiff} files are converted to 8-bit data to reduce the data size. The 8-bit data is then imported and manually segmented in the visualisation software Avizo (Thermo Fisher) to distinguish between the different materials. The segmentation annotates every voxel in each tomography slice to a sample material or to the background, which in turn produces a detailed 3D sample model.
 
 %\begin{figure}
     %\centering
@@ -62,7 +62,7 @@ Following reconstruction in SAVU, the tomography images in the form of 32-bit tw
 %\end{figure}
 
 The final step to tomography processing is done in AnACor, where the X-ray path lengths are traced through the constructed model to determine the final experimental absorption factors.
-%, a ray-tracing software that has been developed collaboratively between I23, Graeme Winter at Diamond Light Source, and Yishun Lu at the Department of Engineering, University of Oxford. AnACor calculates the absorption factors for materials in an analytical 3D model with a discrete form of \cref{AbsFactor}, where the integral over crystal elements $dV$ is replaced with a sum over the crystal voxels $\Delta V$ from  reconstruction \cite{Lu}: %applies an analytical absorption correction strategy based on the 3D model of the sample derived from X-ray tomography.
+%, a ray-tracing software that has been developed collaboratively between I23, Graeme Winter at Diamond Light Source, and Yishun Lu at the Department of Engineering, University of Oxford. AnACor calculates the absorption factors for materials in an analytical 3D model with a discrete form of \cref{AbsFactor}, where the integral over crystal elements $dV$ is replaced with a sum over the crystal voxels $\Delta V$ from  reconstruction \cite{Lu2024}: %applies an analytical absorption correction strategy based on the 3D model of the sample derived from X-ray tomography.
 
 %\begin{equation}
     %A_{\hkl} = \frac{1}{N} \sum_{n=1}^N A_{\hkl}^{(n)}
@@ -72,18 +72,24 @@ AnACor runs in two stages: pre-processing and post-processing. In the pre-proces
 
 Absorption factors used in the AnACor experiments were based on 50 \% acceptance of the material, unless stated otherwise.
 
-In the post-processing stage, an absorption factor is chosen for each material, presumably from the list produced in pre-processing. By default, AnACor autofills these with 50 \% acceptance, as this tends to be the optimal percentage covering the largest area without risking overestimation of material presence. Post-processing also requires the reflection data generated by DIALS. For this reason, the reflection data must be initially produced with DIALS prior to running AnACor. In post-processing, the user can set \textit{anomalous difference} to true or false, depending on whether there is believed to be anomalous scattering. The outcome of this stage is the same as in DIALS; reflection data, along with data statistics on merging quality - the difference to DIALS is that the two sets of reflection data produced have been corrected analytically; one with \ac{sh} applied and one without.
+In the post-processing stage, an absorption factor is chosen for each material, typically from the list produced in pre-processing. By default, AnACor autofills these with 50 \% acceptance, as this tends to be the optimal percentage covering the largest area without risking overestimation of material presence. Post-processing also requires the reflection data generated by DIALS. For this reason, the reflection data must be initially produced with DIALS prior to running AnACor. In post-processing, the user can set \textit{anomalous difference} to true or false, depending on whether there is believed to be anomalous scattering. The output of this stage is the same as in DIALS; reflection data, along with data statistics on merging quality - the difference to DIALS is that the two sets of reflection data produced have been corrected analytically; one with \ac{sh} applied and one without.
 
 Because pre-processing does not generate new reflection data and instead only calculates experimental absorption factors, the first stage of the software can also run on samples void of diffracting material, such as an empty loop or a loop containing solvent. The advantage of this is that samples containing only or largely one type of material will produce more reliable coefficients. The outputted values for the non-diffracting materials can then be used in the post-processing of another sample containing the same kind of solvent or loop, as well as the crystal.
 
-Information on the AnACor ray-tracing algorithm applied to tomographic reconstructions is described in further detail in Lu \textit{et al.} \cite{Lu}.
+Information on the AnACor ray-tracing algorithm applied to tomographic reconstructions is described in further detail in Lu \textit{et al.} \cite{Lu2024}.
 
-Subsequent processing after obtaining reflection data is run with \href{http://ccp4.github.io/dimple}{Dimple}, an MX pipeline for structure refinement, provided there are anomalous scatterers of interest in the crystal. Using the known \ac{pdb} format modelling atomic coordinates with the reflection data stored in \textit{MTZ} file format, Dimple calculates anomalous density (Anode) peaks from atoms in the structure. The peak heights are affected by several factors, including structural isomerism, binding ions, and water molecules contained in the \ac{pdb}. While the peaks are not as reliable as merging statistics for assessing the reflection quality, Dimple likewise generates high-resolution electron density maps, as seen in cref{}, which are imperative for MX structure determination.
+Subsequent processing after obtaining reflection data is run with \href{http://ccp4.github.io/dimple}{\textit{Dimple}}, an \ac{mx} pipeline for structure refinement, provided there are anomalous scatterers of interest in the crystal. The reflection data stored in \textit{MTZ} file format is mapped to a \ac{pdb} format modelling the atomic coordinates of the known protein, allowing for the calculation of anomalous density peaks from anomalous groups. The peak heights are affected by several factors, including structural isomerism, binding ions, and water molecules contained in the \ac{pdb}. %While the peaks are not as reliable as merging statistics for assessing the reflection quality, 
+Dimple likewise generates anomalous difference Fourier maps, which are imperative for electron density maps and thus for \ac{mx} structure determination. %electron density maps, as seen in cref{}
 %MTZ file format is used for the storage of reflection data
 
-Thorough information detailing the step-by-step procedure of data processing in this work, from collection to running Dimple, can be found on Diamond Confluence: \href{https://confluence.diamond.ac.uk/x/yIWuD}{Tomography data processing instructions}. %summarised in cref{}
+Thorough information detailing the step-by-step procedure of data processing in this projection, from collection to \textit{Dimple}, can be found on Diamond Confluence: \href{https://confluence.diamond.ac.uk/x/yIWuD}{Tomography data processing instructions}. %summarised in cref{}
 
-%\subsection{Phenix $f"$-refinement for ion identification}
+\subsection{Phenix $f"$-refinement for ion identification}
+
+Phenix is a comprehensive software package for \ac{mx} structure determination that includes a software extension known as \textit{phenix.refine}. This particular platform allows for the refinement of absorption parameters $f'$ and $f"$ of a particular atom, based on the reflection data and \ac{pdb} structure provided. Given that absorption and emission are sensitive to both wavelength and to the molecular environment, the theoretical parameters are unique to every element. By refining the reflection data to one of the theoretical parameters, the experimentally-calculated parameter can be used to identify the ion in question. This known as $f"$-refinement and is used at I23 for ion identification.
+
+%As described in the methodology, t
+The first stage of \textit{phenix.refine} uses the reflection data provided to produce a modified version of the molecular structure in \ac{pdb} format. This updated molecular structure is then used in the second stage with the same reflection data to estimate the theoretical $f'$ and $f"$ values of specified atoms that are believed to be in the structure. In the case of this experiment, $f'$ was fixed to its theoretical value for a given atom and energy, allowing for an experimental $f"$ to be refined. This value is then corroborated with the theoretical value to determine whether the atom type can be correctly identified.% test the ability of identifying atoms of sulphur and zinc in the crystal by determining their $f"$ peak.
 
 \subsection{Merging statistics: R factor, intensities and estimated uncertainties}
 
