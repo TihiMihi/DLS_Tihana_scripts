@@ -149,46 +149,6 @@ Crystal                          & Energy & N.o. datasets & Exposure time (s per
 
 
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
-\begin{table}[h]
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}lllll@{}}
-\toprule
-Energy (eV) & Attenuation length (µm) & Theoretical coefficient (1/µm) & Experimental coefficient (1/µm) & Percentage Difference (\%) \\ \midrule
-3000 & 60.3724 & 0.016564 & 0.01615  & -2.4973  \\
-3500 & 95.0695 & 0.010519 & 0.010281 & -2.25611 \\
-4000 & 141.783 & 0.007053 & 0.00696  & -1.32401 \\
-4500 & 202.56  & 0.004937 & 0.00491  & -0.53778 \\
-5000 & 279.179 & 0.003582 & 0.003625 & 1.215159 \\
-6000 & 488.075 & 0.002049 & 0.002179 & 6.345384 \\ \bottomrule
-\end{tabular}%
-}
-\caption{Experimentally calculated santovac absorption coefficients from AnACor at 50 \% material acceptance. Attenuation length calculated based on chemical formula \ce{C30H22O4} and density 1.195 \unit{\gram\per\cubic\cm} on the Center for X-Ray Optics \href{https://henke.lbl.gov/optical_constants/atten2.html}{X-ray Attenuation Length} platform.}
-\label{santovac_table}
-\end{table}
-
-
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
-\begin{table}[h]
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}lllll@{}}
-\toprule
-Energy (eV) & Attenuation length (µm) & Theoretical coefficient (1/µm) & Experimental coefficient (1/µm) & Percentage Difference (\%) \\ \midrule
-3000 & 60.3724 & 0.016564 & 0.01615  & -2.4973  \\
-3500 & 95.0695 & 0.010519 & 0.010281 & -2.25611 \\
-4000 & 141.783 & 0.007053 & 0.00696  & -1.32401 \\
-4500 & 202.56  & 0.004937 & 0.00491  & -0.53778 \\
-5000 & 279.179 & 0.003582 & 0.003625 & 1.215159 \\
-6000 & 488.075 & 0.002049 & 0.002179 & 6.345384 \\ \bottomrule
-\end{tabular}%
-}
-\caption{Experimentally calculated ethylene glycol absorption coefficients from AnACor at 50 \% material acceptance. Attenuation length calculated based on chemical formula \ce{C2H6O2} and density 1.195 \unit{\gram\per\cubic\cm} on the Center for X-Ray Optics \href{https://henke.lbl.gov/optical_constants/atten2.html}{X-ray Attenuation Length} platform.}
-\label{ethylene_table}
-\end{table}
 
 
 
@@ -247,9 +207,7 @@ Energy (eV) & Attenuation length (µm) & Theoretical coefficient (1/µm) & Exper
 
 \begin{figure}[h]
     \centering
-    \begin{tabular}{cc}
-    \includegraphics[width = 0.5\textwidth]{plots/exp0/thaum_Isig.png} & \includegraphics[width = 0.5\textwidth]{plots/exp0/thaum_rmerges.png}
-    \end{tabular}
+    \includegraphics{plots/exp0/thaum_stats_grid.pdf}
     \caption{Merging statistics for thaumatin crystal.}
     \label{fig:thaum1_stats}
 \end{figure}
@@ -301,7 +259,7 @@ Energy (eV) & Attenuation length (µm) & Theoretical coefficient (1/µm) & Exper
 \begin{figure}
     \centering
     \begin{tabular}{cc}
-        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p0_met120_peaks.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p0_met205_peaks.png}
+        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p0_met120.pdf} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p0_met250.pdf}
     \end{tabular}
     \caption{Thermolysin 1: Anomalous density peaks of methionine groups at 3.0 \unit{keV}.}
     \label{fig:tlys9_met_peaks_3p0}
@@ -310,7 +268,7 @@ Energy (eV) & Attenuation length (µm) & Theoretical coefficient (1/µm) & Exper
 \begin{figure}
     \centering
     \begin{tabular}{cc}
-        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p5_met120_peaks.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p5_met205_peaks.png}
+        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p5_met120.pdf} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p5_met250.pdf}
     \end{tabular}
     \caption{Thermolysin 1: Anomalous density peaks of methionine groups at 3.5 \unit{keV}.}
     \label{fig:tlys9_met_peaks_3p5}
@@ -319,7 +277,7 @@ Energy (eV) & Attenuation length (µm) & Theoretical coefficient (1/µm) & Exper
 \begin{figure}
     \centering
     \begin{tabular}{cc}
-        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p8_met120_peaks.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p8_met205_peaks.png}
+        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p8_met120.pdf} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p8_met250.pdf}
     \end{tabular}
     \caption{Thermolysin 1: Anomalous density peaks of methionine groups at 3.8 \unit{keV}.}
     \label{fig:tlys9_met_peaks_3p8}
@@ -328,7 +286,7 @@ Energy (eV) & Attenuation length (µm) & Theoretical coefficient (1/µm) & Exper
 \begin{figure}
     \centering
     \begin{tabular}{cc}
-        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_zn_2Dbar.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_zn_2Dbar.png}
+        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_zinc.pdf} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_zinc.pdf}
     \end{tabular}
     \caption{Thermolysin 1: Anomalous density peaks of Zinc at 3.0 and 3.5 \unit{keV}.}
     \label{fig:tlys9_zn_peaks_3p0_3p5}
@@ -336,7 +294,7 @@ Energy (eV) & Attenuation length (µm) & Theoretical coefficient (1/µm) & Exper
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p8_zn405_peaks.png}
+    \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_9_P6122/peaks/3p8_zinc.pdf}
     \caption{Thermolysin 1: Anomalous density peaks of Zinc at 3.8 \unit{keV}.}
     \label{fig:tlys9_zn_peaks_3p8}
 \end{figure}
@@ -345,18 +303,14 @@ Energy (eV) & Attenuation length (µm) & Theoretical coefficient (1/µm) & Exper
 %P1
 \begin{figure}[]
     \centering
-    \begin{tabular}{cc}
-    \includegraphics[width = 0.4\textwidth]{plots/exp1/tlys_9_P1/I_over_sigma.png} & \includegraphics[width = 0.4\textwidth]{plots/exp1/tlys_9_P1/rmerges.png}
-    \end{tabular}
+    \includegraphics{plots/exp1/tlys_9_P1/merged_stats.pdf}
     \caption{Merging statistics for Thermolysin 1 processed in $P_1$.}
     \label{fig:tlys_9_p1}
 \end{figure}
 
 \begin{figure}[]
     \centering
-    \begin{tabular}{cc}
-    \includegraphics[width = 0.4\textwidth]{plots/exp1/tlys_2_P1/I_over_sigma.png} & \includegraphics[width = 0.4\textwidth]{plots/exp1/tlys_2_P1/rmerges.png}
-    \end{tabular}
+    \includegraphics{plots/exp1/tlys_2_P1/stats.pdf}
     \caption{Merging statistics for Thermolysin 2 processed in $P_1$.}
     \label{fig:tlys_2_p1}
 \end{figure}
@@ -368,7 +322,7 @@ Energy (eV) & Attenuation length (µm) & Theoretical coefficient (1/µm) & Exper
 \begin{figure}
     \centering
     \begin{tabular}{cc}
-        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_m120_2Dbar.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_m205_2Dbar.png}
+        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_met120.pdf} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_met120.pdf}
     \end{tabular}
     \caption{Thermolysin 2: Anomalous density peaks of methionine groups at 3.0 \unit{keV}.}
     \label{fig:tlys2_met_peaks_3p0}
@@ -377,7 +331,7 @@ Energy (eV) & Attenuation length (µm) & Theoretical coefficient (1/µm) & Exper
 \begin{figure}
     \centering
     \begin{tabular}{cc}
-        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_m120_2Dbar.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_m205_2Dbar.png}
+        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_met120.pdf} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_met250.pdf}
     \end{tabular}
     \caption{Thermolysin 2: Anomalous density peaks of methionine groups at 3.5 \unit{keV}.}
     \label{fig:tlys2_met_peaks_3p5}
@@ -386,7 +340,7 @@ Energy (eV) & Attenuation length (µm) & Theoretical coefficient (1/µm) & Exper
 \begin{figure}
     \centering
     \begin{tabular}{cc}
-        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_zn_2Dbar.png} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_zn_2Dbar.png}
+        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_zinc.pdf} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_zinc.pdf}
     \end{tabular}
     \caption{Thermolysin 2: Anomalous density peaks of Zinc at 3.0 and 3.5 \unit{keV}.}
     \label{fig:tlys2_zn_peaks}
