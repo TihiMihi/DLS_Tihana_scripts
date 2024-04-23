@@ -75,10 +75,11 @@ Taking the coefficients published in this paper as a reference and varying both 
 
 The merging statics for all 30 AnACor experiments are shown in Appendix A3 in \cref{fig:cld_stats} for Cld and in \cref{fig:ompk_stats} for Ompk. The merging statistics of Cld tell a clearer story than that of Ompk: in \cref{fig:cld_stats} the $I/\sigma(I)$ ratios peak between +10 and +20\% in the crystal factor, and +10\% for liquor; looking at the $R$ factors, these values are minimised at the same variation. This indicates to the combination of coefficients that is presumably the most accurate for these materials, as it provides the best merging statistics.
 
-While the differences in the maximum $I/\sigma(I)$ and minimum $R$ factors to their respective values at $\pm0,\pm0$ are small, in a perfect experiment these optimal statistics would align at $\pm0,\pm0$, as this would indicate that the references AnACor calculated are very good estimates. The underestimation here could be caused by several factors, including poor segmentation or insufficient threshold selections in pre-processing. Nonetheless, this procedure is still useful in correcting for small errors that deter AnACor from obtaining the true values. 
+While the differences in the maximum $I/\sigma(I)$ and minimum $R$ factors to their respective values at $\pm0,\pm0$ are small, in a perfect experiment these optimal statistics would align at $\pm0,\pm0$, as this would indicate that the references AnACor calculated are very good estimates. The underestimation here could be caused by several factors, including poor segmentation or insufficient threshold selections in pre-processing. Nonetheless, this procedure is still useful in correcting for small errors that prevent %deter 
+AnACor from obtaining the true values. 
 
-The Ompk results, shown in \cref{fig:ompk_stats}, are less clear by comparison. Despite the fact that there is a boundary where $I/\sigma(I)$ is maximised, the merging R-factors do not change smoothly between experiments. Instead, there are only three values of the $R$-factor across all 30 runs with no incremental changes in between. %A smoothly changing R factor would indicate that the experiments This behaviour limits our ability to determine the optimal coefficients of liquor and ompk crystal. 
-The absence of smoothly-changing behaviour between experiments is a limitation for finding the optimal absorption coefficients, as we cannot coroborate the optimal $R$ factor.%the R-factor cannot corroborate the optimal $I/\sigma(I)$.
+The Ompk results, shown in \cref{fig:ompk_stats}, are less clear by comparison. While there is a boundary where $I/\sigma(I)$ is maximised, the merging R-factors do not change smoothly between experiments. Instead, there are only three values of the $R$-factor across all 30 runs with no incremental changes in between. %A smoothly changing R factor would indicate that the experiments This behaviour limits our ability to determine the optimal coefficients of liquor and ompk crystal. 
+The absence of smoothly-changing behaviour between experiments is a limitation for finding the optimal absorption coefficients, as we cannot corroborate the optimal $R$ factor.%the R-factor cannot corroborate the optimal $I/\sigma(I)$.
 
 %Establishing X-ray tomography as a valid approach: references for absorption correction calculations
 
@@ -95,60 +96,60 @@ In the interest of time, this check was not applied to the crystals investigated
 % to absorption corrections
 The primary focus of this project was to investigate the potential improvements in data quality by applying an analytical correction to diffraction data.
 %Merging statistics and anomalous peak heights \cite{Lu2024}
-In the interest of observing the effects of high absorption, crystal samples were largely collected at 3.0 and 3.5 \unit{keV}, some of the lowest energies accessible to I23.
+In the interest of observing the effects of high absorption, data on crystal samples was largely collected at 3.0 and 3.5 \unit{keV}, some of the lowest energies accessible to I23.
 
-The first sample to be used for this investigation was a test crystal of thaumatin, collected at 3.0, 3.5, 4.0, and 4.5 \unit{keV}. Because this early experiment was used primarily for segmentation practice, the results for the merging statistics can be found in Appendix A3 in \cref{fig:thaum1_stats}. Despite the segmentation being a rough model, the analytical approach already showed an improvement compared to \ac{sh}, with the two datasets at lower energies favouring \ac{acsh}, and the remaining datasets favouring \ac{ac}.
+The first sample to be used for this investigation was a test crystal of thaumatin (\ce{C19H29N3O3S}), collected at 3.0, 3.5, 4.0, and 4.5 \unit{keV}. Because this early experiment was used primarily for segmentation practice, the results for the merging statistics can be found in Appendix A3 in \cref{fig:thaum1_stats}. Despite the segmentation being a rough model, the analytical approaches already showed an improvement compared to standard absorption correction protocols based on \ac{sh}, with the two datasets at lower energies favouring the coupled \ac{acsh} approach, and the remaining datasets favouring \ac{ac} without \ac{sh}. While these results were encouraging for the usefulness of AnACor, it is unclear why \ac{ac} performs better at higher energies. 
 
-Subsequent tomography experiments were performed on two protein crystals of thermolysin, a thermostable metalloproteinase. The first crystal, referred to as Thermolysin 1, was collected at three energies: 3.0, 3.5, and 3.8 \unit{keV}, with datasets of varying orientations of $\kappa$ and $\phi$ at each energy, as listed in \cref{diffration_table} in Appendix A2. The subsequent thermolysin crystal was collected at 3.0 and 3.5 \unit{keV} with the $\kappa$ and $\phi$ orientations specified in the same table.
+Subsequent tomography experiments were performed on two protein crystals of thermolysin, a thermostable metalloproteinase. The first crystal, referred to as Thermolysin 1, was collected at three energies: 3.0, 3.5, and 3.8 \unit{keV}, with datasets of varying orientations of $\kappa$ and $\phi$ at each energy, as listed in \cref{diffration_table} in the appendix. The subsequent thermolysin crystal was collected at 3.0 and 3.5 \unit{keV} with the $\kappa$ and $\phi$ orientations specified in the same table.
 
-The merging statistics for individual datasets of Thermolysin 1 are shown in \cref{fig:tlys_9_3p0,fig:tlys_9_3p5,fig:tlys_9_3p8} in Appendix A3. Since there were no visible outliers, datasets for each energy were subsequently merged to produce the merging statistics illustrated in \cref{fig:tlys_9_stats}.%presenting outliers
+The merging statistics for individual datasets of Thermolysin 1 are shown in \cref{fig:tlys_9_3p0,fig:tlys_9_3p5,fig:tlys_9_3p8} in the appendix. Since there were no visible outliers, datasets for each energy were subsequently merged to produce the merging statistics illustrated in \cref{fig:tlys_9_stats}.%presenting outliers
 
 \begin{figure}
     \centering
     \includegraphics{plots/exp1/tlys_9_P6122/merged_stats.pdf}
-    \caption{Merging statistics for merged reflection data of Thermolysin 1.}
+    \caption{Merging statistics for merged reflection data of Thermolysin 1. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
     \label{fig:tlys_9_stats}
 \end{figure}
 
 
 Taking into account both the increase in $I/\sigma(I)$ and decrease in $R_{merge}$, the merging statistics from Thermolysin 1 showed that \ac{acsh}, which combines tomography with spherical harmonics, was on average the best approach. While this was the case for every dataset of Thermolysin 1, some instances showed only a small improvement compared to \ac{sh}. Likewise, the standalone analytical approach was on average worse than \ac{sh} as well as \ac{acsh}.
 
-Changes in energy are not expected to affect the reflection data; however, datasets that were collected subsequently on the crystal are more susceptible to radiation damage from longer exposure to the beam.% If segmentation was then performed on a dataset collected early on in the tomography experiment, there can be discrepancies between the analytical model and a more-so radiation-damaged dataset.
+Changes in energy are not expected to affect the reflection data; however, datasets that were collected subsequently are more susceptible to radiation damage from longer exposure to the beam. If a dataset exhibits signs of noticeable radiation damage, it is omitted from subsequently merged data.% If segmentation was then performed on a dataset collected early on in the tomography experiment, there can be discrepancies between the analytical model and a more-so radiation-damaged dataset.
 
 %Following collection of reflection data, the AnACor results are used for structure refinement in Dimple, which generates anomalous density peaks for all the detected anomalous atoms and molecules based on the provided model. The results of Thermolysin 1
 
-The merging statistics for individual datasets of Thermolysin 2 are shown in Appendix A3 in \cref{fig:tlys_2_3p0,fig:tlys_2_3p5}. An immediate takeaway from these results is that the data quality of the second thermolysin is overall significantly better than the first, with on average higher reflection intensities and lower R-factors. Since there were no clear outliers, all datasets with common energies were once again merged to produce the results shown in \cref{fig:tlys_2_stats}. Both parameters overwhelmingly show the same trend, with \ac{acsh} being the dominating correction method across all datasets and energies. This is visible both in the $I/\sigma(I)$ ratios and the merging R factors.
+The merging statistics for individual datasets of Thermolysin 2 are shown in the appendix in \cref{fig:tlys_2_3p0,fig:tlys_2_3p5}. An immediate takeaway from these results is that the data quality of the second thermolysin is overall significantly better than the first, with on average higher reflection intensities and lower R-factors. Since there were no clear outliers, all datasets with common energies were once again merged to produce the results shown in \cref{fig:tlys_2_stats}. Both parameters clearly show the same trend, with \ac{acsh} being the dominating correction method across all datasets and energies. This is visible both in the $I/\sigma(I)$ ratios and the merging R factors.
 %that \ac{acsh} is once again the best correction method
 %Results from Thermolysin 2 overwhelmingly show that \ac{acsh} is the dominating correction method, with $I/ \sigma$ highest and the R factors dipping across every dataset.
 
 \begin{figure}
     \centering
     \includegraphics{plots/exp1/tlys_2_P6122/merged_stats.pdf}
-    \caption{Merging statistics for merged reflection data of Thermolysin 2.}
+    \caption{Merging statistics for merged reflection data of Thermolysin 2. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
     \label{fig:tlys_2_stats}
 \end{figure}
 
 
 The collection of reflection data from DIALS and \textit{AnACor} were used for structural refinement in \textit{Dimple} to generate anomalous density peaks for all the detected anomalous groups, based on the provided model in \ac{pdb} format. In thermolysin, the relevant anomalous groups are two methionine groups in positions 205 and 120 of the polypeptide chain of amino acid residuals %\cite{CLAUDIO1984}
-, and a zinc atom. The results for individual datasets of Thermolysin 1 can be found in \cref{fig:tlys9_met_peaks_3p0,fig:tlys9_met_peaks_3p5,fig:tlys9_met_peaks_3p8,fig:tlys9_zn_peaks_3p0_3p5,fig:tlys9_zn_peaks_3p8}, and for Thermolysin 2 in \cref{fig:tlys2_met_peaks_3p0,fig:tlys2_met_peaks_3p5,fig:tlys2_zn_peaks} in Appendix A3. % and \cref{fig:tlys2_met_peaks_3p5}.
+, and a zinc atom. The results for individual datasets of Thermolysin 1 can be found in \cref{fig:tlys9_met_peaks_3p0,fig:tlys9_met_peaks_3p5,fig:tlys9_met_peaks_3p8,fig:tlys9_zn_peaks_3p0_3p5,fig:tlys9_zn_peaks_3p8}, and for Thermolysin 2 in \cref{fig:tlys2_met_peaks_3p0,fig:tlys2_met_peaks_3p5,fig:tlys2_zn_peaks} in the appendix. % and \cref{fig:tlys2_met_peaks_3p5}.
 While it is not common to all \ac{pdb}s of thermolysin, the model used in these refinements included a sulphate group, \ce{SO4}. The four highest anomalous density, or \textit{Anode} peaks, for merged reflection data from Thermolysin 1 are shown in \cref{fig:tlys_9_merged_peaks} and in \cref{fig:tlys_2_merged_peaks} for Thermolysin 2.
 
 
-While the majority of individual datasets seen in the appendix indicate to a boost from \ac{acsh} in anomalous peaks, the improvements were reasonably small. Interestingly, the anomalous peaks measured from subsequently merged reflection data showed even smaller changes between correction methods, with no clear indication that \ac{acsh} leads to marginal benefits.
+While the majority of individual datasets seen in \cref{fig:tlys9_met_peaks_3p0,fig:tlys9_met_peaks_3p5,fig:tlys9_met_peaks_3p8,fig:tlys9_zn_peaks_3p0_3p5,fig:tlys9_zn_peaks_3p8,fig:tlys2_met_peaks_3p0,fig:tlys2_met_peaks_3p5,fig:tlys2_zn_peaks} exhibit the highest anomalous signal when processed with \ac{acsh}, indicating to a clear boost from \ac{acsh} in anomalous density peaks, the improvements were reasonably small. Interestingly, the anomalous peaks measured from subsequently merged reflection data showed even smaller changes between correction methods, with no clear indication that \ac{acsh} leads to marginal benefits.
 
 A clear difference here compared to the merging statistics is the lack of change in peak heights between methods. While there is a slight improvement in some cases, the peak heights remain overall unchanged regardless of the correction applied. This goes to show that despite the quality of reflections being clearly better when corrected with \ac{acsh}, analytical corrections are not sufficient for marginally improving anomalous slopes in thermolysin.%\textit{Dimple}.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width = 1.1 \textwidth]{plots/exp1/tlys_9_P6122/peaks/merged_peaks_so4.pdf}
+    \includegraphics[width = 1.0 \textwidth]{plots/exp1/tlys_9_P6122/peaks/merged_peaks_so4.pdf}
     \caption{Top four \textit{Anode} peaks of merged Thermolysin 1.}
     \label{fig:tlys_9_merged_peaks}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width = 0.8 \textwidth]{plots/exp1/tlys_2_P6122/peaks/merged_peaks.pdf}
-    \caption{Top four \textit{Anode} peaks of merged Thermolysin 2.}
+    \includegraphics{plots/exp1/tlys_2_P6122/peaks/merged_peaks.pdf}
+    \caption{Top four \textit{Anode} peaks of merged Thermolysin 2: (left to right) zinc (position 405), methionine (position 205), methionine (position 120), sulphate.}
     \label{fig:tlys_2_merged_peaks}
 \end{figure}
 %While the heights of anomalous peaks are not a direct indicator of precision or quality, we can once again see that the coupled approach amplifies the detected anomalous signal from these groups.
@@ -192,21 +193,21 @@ Following experiments that showed the successes and limitations of tomographic r
 
 Both X-ray tomography and laser-shaping have proven to improve the quality of low-energy diffraction, but their combined effects had not yet been explored. In the following experiment, two crystals of insulin and two of proteinase K were used for a preliminary test of what this combined effect would look like. Each protein experiment had one control crystal and one that was laser-shaped to remove a majority of the loop and solvent. These samples were then segmented to produce the models shown in \cref{avizo_insulin} and \cref{avizo_proteinasek} in Appendix A1.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics{plots/exp2/ins_stats.pdf}
+    \caption{Merging statistics for the laser-shaped and control crystals of insulin at 3.0 \unit{keV}. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
+    \label{fig:insulin}
+\end{figure}
+
 The laser-shaped samples were ablated to make a spherically shaped crystal that would ideally have been the only material entity. While the crystals were spherical in shape, the size of the crystals used limited the samples to still containing some mother liquor. The tip of laser-shaped samples were therefore not \textit{perfect} crystal spheres, but were entirely void of loop material.
 
 %The merging statistics obtained from this experiment tell somewhat different stories, depending on the protein. 
 
 \begin{figure}[h]
     \centering
-    \includegraphics{plots/exp2/ins_stats.pdf}
-    \caption{Merging statistics for the laser-shaped and control crystals of insulin at 3.0 \unit{keV}.}
-    \label{fig:insulin}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
     \includegraphics{plots/exp2/prot_stats.pdf}
-    \caption{Merging statistics for the laser-shaped and control crystals of Proteinase K at 3.0 \unit{keV}.}
+    \caption{Merging statistics for the laser-shaped and control crystals of Proteinase K at 3.0 \unit{keV}. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
     \label{fig:proteinasek}
 \end{figure}
 
@@ -215,7 +216,7 @@ The insulin crystals, shown in \cref{fig:insulin}, suggest there is little to no
 A common feature to both proteins is that in the case of the laser-shaped sample, \ac{acsh} and \ac{sh} remain nearly identical across both parameters.
 This suggests that, while tomography-based reconstruction and laser-shaping are both successful absorption corrections in their own right, the effect of combining these methods at long wavelengths remains unchanged.
 
-A surprising feature of the proteinase K results is the fall in \ac{ac} and \ac{acsh} from the control to laser-shaped sample. While there is less reason for analytical corrections to be improved by laser-shaping, as non-diffracting material is already accounted for in detail, it is unexpected for the corrections to perform worse on a laser-shaped sample. Since this effect is not observed in the insulin crystals, it is necessary to repeat this experiment with a larger sample pool to determine if this behaviour is an outlier.%It is believed that this discrepancy can be attributed to the surface of laser-shaped insulin, seen in \cref{avizo_insulin}, which was covered by bubbles of what was presumed to be liquor. Aside from the fact that these bubbles contribute to background noise while not contributing to diffraction, the high contrast of this surface made detailed segmentation especially challenging, making . The limitations on the analytical model could therefore be the cause. % of this
+An unexpected feature of the proteinase K results is the fall in \ac{ac} and \ac{acsh} from the control to laser-shaped sample. While there is less reason for analytical corrections to be improved by laser-shaping, as non-diffracting material is already accounted for in detail, it is unusual for the corrections to perform worse on a laser-shaped sample. Since this effect is not observed in the insulin crystals, it is necessary to repeat this experiment with a larger sample pool to determine if this behaviour is an outlier.%It is believed that this discrepancy can be attributed to the surface of laser-shaped insulin, seen in \cref{avizo_insulin}, which was covered by bubbles of what was presumed to be liquor. Aside from the fact that these bubbles contribute to background noise while not contributing to diffraction, the high contrast of this surface made detailed segmentation especially challenging, making . The limitations on the analytical model could therefore be the cause. % of this
 
 While the results from insulin indicate that the effects of only laser-shaping and of only analytical corrections are comparable, the results from proteinase K tell a different story, suggesting that laser-shaping only benefits \ac{sh} while being in fact detrimental to analytical approaches. The control sample of proteinase K with \ac{acsh} likewise performs better than any corrections in the laser-shaped crystal. %there is a noticeable improvement in laser-shaping compared to standalone tomography. This is unexpected when compared to the trend seen with insulin. The control, however, does not follow the expected behaviour either; with \ac{sh} and \ac{acsh} being nearly identical among both parameters. This could be attributed simply to poor diffraction; however, more data must be analysed to reach a conclusive picture of what is happening.
 
@@ -251,6 +252,8 @@ Faults in the absorption coefficients are particularly sensitive to the \textit{
 While it is unclear whether this affects the quality of results in this project, further steps must be taken to resolve the material selection and ensure analytical pathways are computed precisely.
 
 Current efforts are being put forward to developing an automatic segmentation procedure at I23. This would significantly boost the speed of data processing jobs in tomography, as segmentation is the most meticulous aspect of the routine.
+
+**CK says: comment on the structural refinements, rather than just merging statistics... show improvements in the structural modelling? This would put the work more in context and allow for more discussion**
 
 %Faults in anacor thresholding, particularly at processing datasets collected at multiple energies
 
