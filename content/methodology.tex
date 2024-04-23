@@ -93,7 +93,7 @@ The first stage of \textit{phenix.refine} uses the reflection data provided to p
 
 \subsection{Merging statistics: R factor, intensities and estimated uncertainties}
 
-When reflection data is scaled, data reduction software such as DIALS also provide a range of statistical parameters, including completeness, multiplicity, and reflection intensities. In diffraction experiments, the data quality is usually assessed by the global $R_{merge}$ factor based on the reflection intensities. $R_{merge}$ is a measure of the average ratio of the spread of symmetry-equivalent reflection intensities to the estimated value of reflection intensity \cite{Dauter1999}:
+When reflection data is scaled, data reduction software such as DIALS also provide a range of statistical parameters, including completeness, multiplicity, and reflection intensities. In diffraction experiments, the data quality is usually assessed by the global $R_{merge}$ factor based on the reflection intensities. The $R_{merge}$ is a measure of the average ratio of the spread of symmetry-equivalent reflection intensities to the estimated value of reflection intensity \cite{Dauter1999}:
 
 \begin{equation}
     R_{merge} = \sum_{\hkl}\sum_i | I_{\hkl,i} - \langle I_{\hkl} \rangle | / \sum_{\hkl} \langle I_{\hkl} \rangle
