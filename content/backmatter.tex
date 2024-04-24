@@ -5,47 +5,12 @@
 \noindent
 %\twocolumn
 \section{Appendix}
-\subsection*{Segmentation Models}
-
-\renewcommand{\thefigure}{A\arabic{figure}}
-\setcounter{figure}{0}
-
-\begin{figure}[h]
-    \begin{tabular}{cc}
-    	\includegraphics[height=7cm ]{images/avizo_flats/tlys9.jpg} & \includegraphics[height=7cm]{images/avizo_flats/tlys2.jpg}
-    \end{tabular}
-	\caption{Volume rendering in Avizo showing materials of crystal (light blue), liquor (pink), loop (dark blue): Thermolysin 1 (left) and Thermolysin 2 (right)}
- \label{tlys2}
-\end{figure}
-%\begin{figure}
-	%\includegraphics[width=0.5\textwidth]{images/avizo_flats/cas3_1118.jpg}
-	%\caption{Volume rendering in Avizo:}
-%\label{cas3}
-%\end{figure}
 
 
-\begin{figure}[h]
-    \begin{tabular}{cc}
-	\includegraphics[height=7cm]{images/avizo_flats/ins_con.jpg} & \includegraphics[height=7cm]{images/avizo_flats/ins_ls.jpg}
-    \end{tabular}
-	\caption{Volume rendering in Avizo showing materials of crystal (light blue), liquor (pink), loop (dark blue): Insulin control crystal (left) and laser-shaped crystal (right)}
- \label{avizo_insulin}
-\end{figure}
+%\onecolumn
 
 
-\begin{figure}
-    \begin{tabular}{cc}
-	\includegraphics[height=7cm]{images/avizo_flats/prot_con.png} & \includegraphics[height=7cm]{images/avizo_flats/prot_ls.jpg}
-    \end{tabular}
-    \caption{Volume rendering in Avizo showing materials of crystal (light blue), liquor (pink), loop (dark blue): Proteinase-K control crystal (left) and laser-shaped crystal (right)}
-    \label{avizo_proteinasek}
-\end{figure}
 
-
-\onecolumn
-
-
-\newpage
 
 \setcounter{table}{0}
 \renewcommand{\thetable}{A\arabic{table}}
@@ -61,7 +26,7 @@
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lllll@{}}
 \toprule
-Crystal                          & Energy & N.o. datasets & \begin{tabular}[c]{@{}l@{}}Exposure time\\ (s per 0.2 deg)\end{tabular} & Notes                          \\ \midrule
+Crystal                          & \begin{tabular}[c]{@{}l@{}}Energy\\ (\unit{keV})\end{tabular} & \begin{tabular}[c]{@{}l@{}}N.o. datasets\\ in diffraction\end{tabular} & \begin{tabular}[c]{@{}l@{}}Exposure time\\ (s per 0.2 deg)\end{tabular} & Notes                          \\ \midrule
                                  & 3.0    & 4             & 0.35                          &                                \\
                                  & 3.5    & 5             & 0.25                          &                                \\
 \multirow{-3}{*}{Thermolysin 1}  & 3.8    & 5             & 0.22                          &                                \\
@@ -86,7 +51,7 @@ Crystal                          & Energy & N.o. datasets & \begin{tabular}[c]{@
 \end{tabular}%
 }
 
-\caption{Tomography Data Collection Parameters; collected using the goniometer at $\kappa$, $\phi$ = 0$\degree$, 0$\degree$ at the I23 endstation, Diamond Light Source, UK.}
+\caption{Tomography Data Collection Parameters; collected using the goniometer at $\kappa$, $\phi$ = 0$\degree$, 0$\degree$ at the I23 endstation, Diamond Light Source, UK. The number of datasets indicates how many diffraction experiments were collected at the same energy prior to tomography and will therefore be matched with the flat field from the corresponding tomography scan.}
 \label{tomo_table}
 \end{table}
 
@@ -99,7 +64,7 @@ Crystal                          & Energy & N.o. datasets & \begin{tabular}[c]{@
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lllllll@{}}
 \toprule
-Crystal                    & Energy               & Processing symmetry group & N.o. datasets      & Transmission       & $\kappa$ & $\phi$  \\ \midrule
+Crystal                    & Energy (\unit{keV})              & Processing symmetry group & N.o. datasets      & Transmission       & $\kappa$ & $\phi$  \\ \midrule
 \multirow{23}{*}{Thermolysin 1} & \multirow{7}{*}{3.0} & \multirow{4}{*}{P6122}     & \multirow{4}{*}{4} & \multirow{4}{*}{5}  & -25 & -100 \\
                            &                      &                           &                    &                    & -40   & 70   \\
                            &                      &                           &                    &                    & -35   & -70  \\
@@ -194,18 +159,56 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
 
 
 \newpage
+
+\subsection*{Segmentation Models}
+
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{figure}{0}
+
+\begin{figure}[h]
+    \begin{tabular}{cc}
+    	\includegraphics[height=7cm ]{images/avizo_flats/tlys9.jpg} & \includegraphics[height=7cm]{images/avizo_flats/tlys2.jpg}
+    \end{tabular}
+	\caption{Volume rendering in Avizo showing materials of crystal (light blue), liquor (pink), loop (dark blue): Thermolysin 1 (left) and Thermolysin 2 (right)}
+ \label{tlys2}
+\end{figure}
+%\begin{figure}
+	%\includegraphics[width=0.5\textwidth]{images/avizo_flats/cas3_1118.jpg}
+	%\caption{Volume rendering in Avizo:}
+%\label{cas3}
+%\end{figure}
+
+
+\begin{figure}[h]
+    \begin{tabular}{cc}
+	\includegraphics[height=7cm]{images/avizo_flats/ins_con.jpg} & \includegraphics[height=7cm]{images/avizo_flats/ins_ls.jpg}
+    \end{tabular}
+	\caption{Volume rendering in Avizo showing materials of crystal (light blue), liquor (pink), loop (dark blue): Insulin control crystal (left) and laser-shaped crystal (right)}
+ \label{avizo_insulin}
+\end{figure}
+
+
+\begin{figure}
+    \begin{tabular}{cc}
+	\includegraphics[height=7cm]{images/avizo_flats/prot_con.png} & \includegraphics[height=7cm]{images/avizo_flats/prot_ls.jpg}
+    \end{tabular}
+    \caption{Volume rendering in Avizo showing materials of crystal (light blue), liquor (pink), loop (dark blue): Proteinase-K control crystal (left) and laser-shaped crystal (right)}
+    \label{avizo_proteinasek}
+\end{figure}
+\newpage
+
 \subsection*{Charts \& Plots}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width = 0.8\textwidth]{plots/exp0/cld_merged_stats.pdf} 
+    \includegraphics[width = \textwidth]{plots/exp0/cld_merged_stats.pdf} 
     \caption{Merging statistics showing the effects of varying the experimental Cld crystal and liquor absorption coefficients in Lu \textit{et al.} \cite{Lu2024} calculated by AnACor. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right. (Light shades indicate the best merging statistics, and \textit{vice versa}.)}
     \label{fig:cld_stats}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width = 0.8\textwidth]{plots/exp0/ompk_merged_stats.pdf}
+    \includegraphics[width = \textwidth]{plots/exp0/ompk_merged_stats.pdf}
     \caption{Merging statistics showing the effects of varying the experimental Ompk crystal and liquor absorption coefficients in Lu \textit{et al.} \cite{Lu2024} calculated by AnACor. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right. (Light shades indicate the best merging statistics, and \textit{vice versa}.)}
     \label{fig:ompk_stats}
 \end{figure}
@@ -307,23 +310,6 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
 \end{figure}
 
 
-%P1
-\begin{figure}[]
-    \centering
-    \includegraphics{plots/exp1/tlys_9_P1/merged_stats.pdf}
-    \caption{Merging statistics for Thermolysin 1 processed in $P_1$. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
-    \label{fig:tlys_9_p1}
-\end{figure}
-
-\begin{figure}[]
-    \centering
-    \includegraphics{plots/exp1/tlys_2_P1/stats.pdf}
-    \caption{Merging statistics for Thermolysin 2 processed in $P_1$. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
-    \label{fig:tlys_2_p1}
-\end{figure}
-
-
-
 
 % TLYS 2 ANODE PEAKS
 \begin{figure}
@@ -351,4 +337,21 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
     \end{tabular}
     \caption{Thermolysin 2: Anomalous density peaks of zinc at 3.0 \unit{keV} (left) and 3.5 \unit{keV} (right).}
     \label{fig:tlys2_zn_peaks}
+\end{figure}
+
+
+
+%P1
+\begin{figure}[]
+    \centering
+    \includegraphics{plots/exp1/tlys_9_P1/merged_stats.pdf}
+    \caption{Merging statistics for merged Thermolysin 1 data processed in $P_1$. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
+    \label{fig:tlys_9_p1}
+\end{figure}
+
+\begin{figure}[]
+    \centering
+    \includegraphics{plots/exp1/tlys_2_P1/stats.pdf}
+    \caption{Merging statistics for merged Thermolysin 2 data processed in $P_1$. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
+    \label{fig:tlys_2_p1}
 \end{figure}
