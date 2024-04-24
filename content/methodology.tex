@@ -20,7 +20,7 @@ Following a diffraction experiment, the sample is kept in its in-beam position w
     \label{fig:vacuum_chamber}
 \end{figure}
 
-Diffraction collection require the user to specify the energy, rotation increment, and beam transmission. Likewise, the positioning of the goniometer needs to be closely surveyed to match the chosen kappa and phi angles, which also must be specified by the user for each collection. The number of datasets of one crystal corresponds to the diffraction experiments at the same energy using varying orientations of kappa and phi. The relevant collection parameters used for each diffraction experiment on the aforementioned crystals can be found in \cref{diffration_table} in appendix A2.
+Diffraction data collections require the user to specify the energy, rotation increment, image time, and beam transmission. Likewise, the positioning of the goniometer needs to be closely surveyed to match the chosen kappa and phi angles, which also must be specified by the user for each collection. The number of datasets of one crystal corresponds to the diffraction experiments at the same energy using varying orientations of kappa and phi. The relevant collection parameters used for each diffraction experiment on the aforementioned crystals can be found in \cref{diffration_table} in appendix A2.
 
 Tomography collection also requires a specified energy, exposure time, and sample orientation. While the energy of tomography scans used for the segmentation model does not need to match the experimental diffraction data they are used for, the projection images (also known as flat-fields) should be applied to a dataset with a matching energy. To therefore ensure the matching of diffraction and tomography experiments, tomography is collected at every energy that diffraction is collected at, with $\kappa$ and $\phi$ typically set to zero. The tomography parameters used in these experiments can be found in \cref{tomo_table} in Appendix A2.
 
@@ -28,11 +28,11 @@ Further information on the step-by-step procedure of tomography data collection 
 
 \subsection{Laser-shaping in cryo-crystallography}
 % Unibody-Design fs laser
-Beamline I23 now houses a commercial femtosecond laser  that has been set up for laser-shaping crystal samples in-cryo. The product by Light Conversion is a \textbf{CARBIDE-CB5-6W} laser, with a tunable pulse duration between 190 \unit{fs} and 20 \unit{ps}, a maximum power output of 6 \unit{W}, and an air-cooled model. The laser is also installed with the \textbf{2H} \textit{HG for CARBIDE} harmonic generator model by Light Conversion, with an output wavelength of 515 \unit{nm}, mounted on the laser head.
+A peripheral lab at Diamond Light Source now houses a commercial femtosecond laser  that has been set up for laser-shaping crystal samples under cryogenic conditions. The product by Light Conversion is a \textbf{CARBIDE-CB5-6W} laser, with a tunable pulse duration between 190 \unit{fs} and 20 \unit{ps}, a maximum power output of 6 \unit{W}, and an air-cooled model. The laser is also installed with the \textbf{2H} \textit{HG for CARBIDE} harmonic generator model by Light Conversion, with output wavelength options of 1030, 515, and 343 \unit{nm}.%of 515 \unit{nm}, mounted on the laser head.
 %https://lightcon.com/product/carbide-femtosecond-lasers/#cb5-specifications
 %https://lightcon.com/product/harmonic-generator-for-carbide/#specifications
 
-To allow for the swift transfer of samples from a liquid nitrogen bath directly to the air-cooled goniometer at the femtosecond laser, the laser room used by I23 also houses \href{https://www.diamond.ac.uk/Home/Corporate-Literature/Annual-Review/Review2015/Villages/Macromolecular-Crystallography-Village/Macromolecular-Crystallography-Village-Developments/BART---the-new-robotic-sample-changer-for-MX-beamlines-at-Diamond.html}{BART}, a robotic sample changer for \ac{mx} beamlines at Diamond. The experimental setup allows for samples to be sustained at cryogenic temperatures during transfer and experiment.
+To allow for the swift transfer of samples from a liquid nitrogen bath directly to the liquid nitrogen-cooled goniometer at the femtosecond laser, the laser room used by I23 also houses \href{https://www.diamond.ac.uk/Home/Corporate-Literature/Annual-Review/Review2015/Villages/Macromolecular-Crystallography-Village/Macromolecular-Crystallography-Village-Developments/BART---the-new-robotic-sample-changer-for-MX-beamlines-at-Diamond.html}{BART}, a robotic sample changer for \ac{mx} beamlines at Diamond. The experimental setup allows for samples to be sustained at cryogenic temperatures during transfer and experiment.
 
 \subsection{Data processing pipelines, DIALS, and AnACor}
 
@@ -48,7 +48,7 @@ Tomography data can be visualised in \textit{ImageJ} or in \textit{DAWN}. After 
 \begin{figure}
     \centering
     \includegraphics[width = 0.5\textwidth]{images/Tomo projection images CLD and Ompk high quality.png}
-    \caption{Tomography projection images of Ompk (top row) and Cld (bottom row) showing: ((a) and (d)) background,  ((b) and (e)) sample, and ((c) and (f)) flat-field corrected images. Produced by Lu \textit{et al.} (Unpublished) \cite{Lu2024}.}
+    \caption{Tomography projection images of Ompk (top row) and Cld (bottom row) showing: ((a) and (d)) background,  ((b) and (e)) sample, and ((c) and (f)) flat-field corrected images. Produced by Lu \textit{et al.} \cite{Lu2024}.}
     \label{fig:tomo projections}
 \end{figure}
 
@@ -68,7 +68,7 @@ The final step to tomography processing is done in AnACor, where the X-ray path 
     %A_{\hkl} = \frac{1}{N} \sum_{n=1}^N A_{\hkl}^{(n)}
 %\end{equation}
 % which visualises provisional 3D models
-AnACor runs in two stages: pre-processing and post-processing. In the pre-processing stage, the user collects the 3D-segmentation labels exported from Avizo and the cropped flat-field images, and feeds these into AnACor to produce a threshold of the sample highlighting where it has high confidence in the presence of a certain percentage of each material. The outcome of pre-processing is a list of absorption factors that are based on where it believes 25\%, 50\%, 75\%, and 100\% of each material lies - this is known as the acceptance percentage. A lower acceptance percentage corresponds to higher confidence, and vice versa. % acceptance of the presence
+AnACor runs in two stages: pre-processing and post-processing. In the pre-processing stage, the user collects the 3D-segmentation labels exported from Avizo and the cropped flat-field images, and feeds these into AnACor to produce a threshold of the sample highlighting where it has high confidence in the presence of a certain percentage of each material. The outcome of pre-processing is a list of absorption factors that are based on where it believes 25\%, 50\%, 75\%, and 100\% of each material lies - this is known as the acceptance percentage. A lower acceptance percentage corresponds to higher confidence, and \textit{vice versa}. % acceptance of the presence
 
 Absorption factors used in the AnACor experiments were based on 50 \% acceptance of the material, unless stated otherwise.
 
@@ -86,7 +86,7 @@ Thorough information detailing the step-by-step procedure of data processing in 
 
 \subsection{Phenix $f"$-refinement for ion identification}
 
-Phenix is a comprehensive software package for \ac{mx} structure determination that includes a software extension known as \textit{phenix.refine}. This particular platform allows for the refinement of absorption parameters $f'$ and $f"$ of a particular atom, based on the reflection data and \ac{pdb} structure provided. Given that absorption and emission are sensitive to both wavelength and to the molecular environment, the theoretical parameters are unique to every element. By refining the reflection data to one of the theoretical parameters, the experimentally-calculated parameter can be used to identify the ion in question. This known as $f"$-refinement and is used for ion identification at I23.
+Phenix is a comprehensive software package for \ac{mx} structure determination that includes a software extension known as \textit{phenix.refine}. This particular platform allows for the refinement of absorption parameters $f'$ and $f"$ of a particular atom, based on the reflection data and \ac{pdb} structure provided. Given that absorption and emission are sensitive to both wavelength and to the molecular environment, the theoretical parameters are unique to every atom. By refining the reflection data to one of the theoretical parameters, the experimentally-calculated parameter can be used to identify the ion in question. This known as $f"$-refinement and is used for ion identification at I23.
 
 %As described in the methodology, t
 The first stage of \textit{phenix.refine} uses the reflection data provided to produce a modified version of the molecular structure in \ac{pdb} format. This updated molecular structure is then used in the second stage with the same reflection data to estimate the theoretical $f'$ and $f"$ values of specified atoms that are believed to be in the structure. In the case of this experiment, $f'$ was fixed to its theoretical value for a given atom and energy, allowing for an experimental $f"$ to be refined over a specified number of cycles. This value is then corroborated with the theoretical value to determine whether the atom type can be correctly identified.% test the ability of identifying atoms of sulphur and zinc in the crystal by determining their $f"$ peak.
