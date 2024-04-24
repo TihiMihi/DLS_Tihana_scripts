@@ -51,7 +51,7 @@ Crystal                          & \begin{tabular}[c]{@{}l@{}}Energy\\ (\unit{ke
 \end{tabular}%
 }
 
-\caption{Tomography Data Collection Parameters; collected using the goniometer at $\kappa$, $\phi$ = 0$\degree$, 0$\degree$ at the I23 endstation, Diamond Light Source, UK. The number of datasets indicates how many diffraction experiments were collected at the same energy prior to tomography and will therefore be matched with the flat field from the corresponding tomography scan.}
+\caption{Tomography Data Collection Parameters; collected using the goniometer at $\kappa$, $\phi$ = 0$\degree$, 0$\degree$ at the I23 endstation, Diamond Light Source, UK. The number of datasets indicates how many diffraction experiments were collected at the same energy prior to tomography and will therefore be matched with the flat-field-corrected images from the corresponding tomography scan.}
 \label{tomo_table}
 \end{table}
 
@@ -116,7 +116,18 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
 
 
 
-
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Sample & Crystal & Mother liquor & Loop    & Detergent aggregate \\ \midrule
+Cld    & 0.01053 & 0.01208       & 0.00931 & 0.0322              \\
+OmpK36 & 0.0160  & 0.01856       & 0.01724 & N/A                 \\ \bottomrule
+\end{tabular}
+\caption{Linear absorption coefficients \unit{\mu^-1}($µm^{−1}$) of different materials in OmpK36 (λ = 3.54 Å) and Cld (λ = 4.13 Å) samples. Produced by Lu \textit{et al.} \cite{Lu2024}.}
+\label{Cld_Ompk_ACs}
+\end{table}
 
 
 
@@ -133,7 +144,8 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
 % \usepackage{multirow}
 % \usepackage{graphicx}
 \begin{table}[H]
-\resizebox{\textwidth}{!}{%
+%\resizebox{\textwidth}{!}{%
+{
 \begin{tabular}{@{}llllll@{}}
 \toprule
 \multirow{3}{*}{Element, Energy} &
@@ -142,14 +154,14 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
   \multicolumn{3}{c}{Experimental $f"$} \\
                              &                            &                           & \multicolumn{1}{c}{AC} & \multicolumn{1}{c}{SH} & \multicolumn{1}{c}{ACSH} \\ \cmidrule(l){4-6} 
                              &                            &                           & \multicolumn{3}{c}{\% Difference}                                          \\ \midrule
-\multirow{2}{*}{S, 3 \unit{keV}}    & \multirow{2}{*}{-0.75226}  & \multirow{2}{*}{3.059391} & 2.49912                & 2.45008                & 3.03552                  \\
-                             &                            &                           & -18.3132               & -19.9161               & -0.78025                 \\ \midrule
-\multirow{2}{*}{Zn, 3.0 \unit{keV}} & \multirow{2}{*}{3.56E-02}  & \multirow{2}{*}{3.764636} & 2.83766                & 2.36456                & 2.68316                  \\
-                             &                            &                           & -24.6233               & -37.1902               & -28.7272                 \\ \midrule
-\multirow{2}{*}{S, 3.5 \unit{keV}}  & \multirow{2}{*}{-8.16E-02} & \multirow{2}{*}{2.390438} & 2.21949                & 2.24339                & 2.42956                  \\
-                             &                            &                           & -7.15133               & -6.15151               & 1.636604                 \\ \midrule
-\multirow{2}{*}{Zn, 3.5 \unit{keV}}  & \multirow{2}{*}{-6.15E-02} & \multirow{2}{*}{2.912471} & 2.36736                & 2.1546                 & 2.62166                  \\
-                             &                            &                           & -18.7164               & -26.0216               & -9.98503                 \\ \bottomrule
+\multirow{2}{*}{S, 3 \unit{keV}}    & \multirow{2}{*}{-0.7523}  & \multirow{2}{*}{3.059} & 2.49912                & 2.45008                & 3.03552                  \\
+                             &                            &                           & -18.3               & -19.9               & -0.780                 \\ \midrule
+\multirow{2}{*}{Zn, 3.0 \unit{keV}} & \multirow{2}{*}{3.56E-02}  & \multirow{2}{*}{3.765} & 2.83766                & 2.36456                & 2.68316                  \\
+                             &                            &                           & -24.6               & -37.2               & -28.7                 \\ \midrule
+\multirow{2}{*}{S, 3.5 \unit{keV}}  & \multirow{2}{*}{-8.16E-02} & \multirow{2}{*}{2.390} & 2.21949                & 2.24339                & 2.42956                  \\
+                             &                            &                           & -7.15               & -6.15               & 1.64                 \\ \midrule
+\multirow{2}{*}{Zn, 3.5 \unit{keV}}  & \multirow{2}{*}{-6.15E-02} & \multirow{2}{*}{2.912} & 2.36736                & 2.1546                 & 2.62166                  \\
+                             &                            &                           & -18.7               & -26.0               & -9.98                 \\ \bottomrule
 \end{tabular}%
 }
 
@@ -169,7 +181,7 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
     \begin{tabular}{cc}
     	\includegraphics[height=7cm ]{images/avizo_flats/tlys9.jpg} & \includegraphics[height=7cm]{images/avizo_flats/tlys2.jpg}
     \end{tabular}
-	\caption{Volume rendering in Avizo showing materials of crystal (light blue), liquor (pink), loop (dark blue): Thermolysin 1 (left) and Thermolysin 2 (right)}
+	\caption{Volume rendering of the tomography segmentation in Avizo showing materials of crystal (light blue), liquor (pink), loop (dark blue): Thermolysin 1 (left) and Thermolysin 2 (right)}
  \label{tlys2}
 \end{figure}
 %\begin{figure}
@@ -183,7 +195,7 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
     \begin{tabular}{cc}
 	\includegraphics[height=7cm]{images/avizo_flats/ins_con.jpg} & \includegraphics[height=7cm]{images/avizo_flats/ins_ls.jpg}
     \end{tabular}
-	\caption{Volume rendering in Avizo showing materials of crystal (light blue), liquor (pink), loop (dark blue): Insulin control crystal (left) and laser-shaped crystal (right)}
+	\caption{Volume rendering of the tomography segmentation in Avizo showing materials of crystal (light blue), liquor (pink), loop (dark blue): Insulin control crystal (left) and laser-shaped crystal (right)}
  \label{avizo_insulin}
 \end{figure}
 
@@ -192,7 +204,7 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
     \begin{tabular}{cc}
 	\includegraphics[height=7cm]{images/avizo_flats/prot_con.png} & \includegraphics[height=7cm]{images/avizo_flats/prot_ls.jpg}
     \end{tabular}
-    \caption{Volume rendering in Avizo showing materials of crystal (light blue), liquor (pink), loop (dark blue): Proteinase-K control crystal (left) and laser-shaped crystal (right)}
+    \caption{Volume rendering of the tomography segmentation in Avizo showing materials of crystal (light blue), liquor (pink), loop (dark blue): Proteinase-K control crystal (left) and laser-shaped crystal (right)}
     \label{avizo_proteinasek}
 \end{figure}
 \newpage
@@ -202,14 +214,14 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
 \begin{figure}[h]
     \centering
     \includegraphics[width = \textwidth]{plots/exp0/cld_merged_stats.pdf} 
-    \caption{Merging statistics showing the effects of varying the experimental Cld crystal and liquor absorption coefficients in Lu \textit{et al.} \cite{Lu2024} calculated by AnACor. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right. (Light shades indicate the best merging statistics, and \textit{vice versa}.)}
+    \caption{Merging statistics showing the effects of varying the experimental Cld crystal and liquor absorption coefficients in Lu \textit{et al.} \cite{Lu2024} calculated by AnACor. Ratio of signal intensities to their uncertainties shown on the left; Overall $R_{merge}$ factor shown on the right. (Light shades indicate the best merging statistics, and \textit{vice versa}.)}
     \label{fig:cld_stats}
 \end{figure}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width = \textwidth]{plots/exp0/ompk_merged_stats.pdf}
-    \caption{Merging statistics showing the effects of varying the experimental Ompk crystal and liquor absorption coefficients in Lu \textit{et al.} \cite{Lu2024} calculated by AnACor. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right. (Light shades indicate the best merging statistics, and \textit{vice versa}.)}
+    \caption{Merging statistics showing the effects of varying the experimental Ompk crystal and liquor absorption coefficients in Lu \textit{et al.} \cite{Lu2024} calculated by AnACor. Ratio of signal intensities to their uncertainties shown on the left; Overall $R_{merge}$ factor shown on the right. (Light shades indicate the best merging statistics, and \textit{vice versa}.)}
     \label{fig:ompk_stats}
 \end{figure}
 
@@ -218,7 +230,7 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
 \begin{figure}[h]
     \centering
     \includegraphics{plots/exp0/thaum_stats_grid.pdf}
-    \caption{Merging statistics for thaumatin protein crystal. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
+    \caption{Merging statistics for thaumatin protein crystal processed in \textit{P}4\textsubscript{1}2\textsubscript{1}2. Ratio of signal intensities to their uncertainties shown on the left; Overall $R_{merge}$ factor shown on the right.}
     \label{fig:thaum1_stats}
 \end{figure}
 
@@ -230,21 +242,21 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
 \begin{figure}
     \centering
     \includegraphics{plots/exp1/tlys_9_P6122/3p0_stats_grid.pdf}
-    \caption{Merging statistics for Thermolysin 1 at 3.0 \unit{keV}. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
+    \caption{Merging statistics for Thermolysin 1 at 3.0 \unit{keV} processed in \textit{P}6\textsubscript{1}22. Ratio of signal intensities to their uncertainties shown on the left; Overall $R_{merge}$ factor shown on the right.}
     \label{fig:tlys_9_3p0}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics{plots/exp1/tlys_9_P6122/3p5_stats_grid.pdf}
-    \caption{Merging statistics for Thermolysin 1 at 3.5 \unit{keV}. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
+    \caption{Merging statistics for Thermolysin 1 at 3.5 \unit{keV} processed in \textit{P}6\textsubscript{1}22. Ratio of signal intensities to their uncertainties shown on the left; Overall $R_{merge}$ factor shown on the right.}
     \label{fig:tlys_9_3p5}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics{plots/exp1/tlys_9_P6122/3p8_stats_grid.pdf}
-    \caption{Merging statistics for Thermolysin 1 at 3.8 \unit{keV}. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
+    \caption{Merging statistics for Thermolysin 1 at 3.8 \unit{keV} processed in \textit{P}6\textsubscript{1}22. Ratio of signal intensities to their uncertainties shown on the left; Overall $R_{merge}$ factor shown on the right.}
     \label{fig:tlys_9_3p8}
 \end{figure}
 
@@ -253,14 +265,14 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
 \begin{figure}
     \centering
     \includegraphics{plots/exp1/tlys_2_P6122/3p0_stats_grid.pdf}
-    \caption{Merging statistics for Thermolysin 2 at 3.0 \unit{keV}. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
+    \caption{Merging statistics for Thermolysin 2 at 3.0 \unit{keV} processed in \textit{P}6\textsubscript{1}22. Ratio of signal intensities to their uncertainties shown on the left; Overall $R_{merge}$ factor shown on the right.}
     \label{fig:tlys_2_3p0}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics{plots/exp1/tlys_2_P6122/3p5_stats_grid.pdf}
-    \caption{Merging statistics for Thermolysin 2 at 3.5 \unit{keV}. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
+    \caption{Merging statistics for Thermolysin 2 at 3.5 \unit{keV} processed in \textit{P}6\textsubscript{1}22. Ratio of signal intensities to their uncertainties shown on the left; Overall $R_{merge}$ factor shown on the right.}
     \label{fig:tlys_2_3p5}
 \end{figure}
 
@@ -345,13 +357,13 @@ Proteinase-K 2             & 3.0                  & P43212                    & 
 \begin{figure}[]
     \centering
     \includegraphics{plots/exp1/tlys_9_P1/merged_stats.pdf}
-    \caption{Merging statistics for merged Thermolysin 1 data processed in $P_1$. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
+    \caption{Merging statistics for merged Thermolysin 1 data processed in $P_1$. Ratio of signal intensities to their uncertainties shown on the left; Overall $R_{merge}$ factor shown on the right.}
     \label{fig:tlys_9_p1}
 \end{figure}
 
 \begin{figure}[]
     \centering
     \includegraphics{plots/exp1/tlys_2_P1/stats.pdf}
-    \caption{Merging statistics for merged Thermolysin 2 data processed in $P_1$. Ratio of signal intensities to their uncertainties shown on the left; Global $R_{merge}$ factor shown on the right.}
+    \caption{Merging statistics for merged Thermolysin 2 data processed in $P_1$. Ratio of signal intensities to their uncertainties shown on the left; Overall $R_{merge}$ factor shown on the right.}
     \label{fig:tlys_2_p1}
 \end{figure}

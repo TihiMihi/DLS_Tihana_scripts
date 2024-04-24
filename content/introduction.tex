@@ -44,7 +44,7 @@ In \ac{xrd} experiments, the diffraction patterns of a crystal are provided by c
 \end{equation}
 % prop to square root of refkection intensity
 %a measure of how efficiently each atom scatterers X-rays relative to an electron
-\cref{electron_density} illustrates how electron density is proportional to the amplitude of the atomic structure factor, $F_{hkl}$, a measure of the scattering power for reflection $\hkl$. Here, $x,y,z$ are the positional coordinates of reflection $\hkl$ in a unit cell of volume $V$, where $h$,$k$, and $\ell$ are the Miller indices describing the orientation of the crystal plane in reciprocal space. %by quantifying its reciprocal intercepts in the crystal axes.
+\cref{electron_density} illustrates how electron density is proportional to the amplitude of the atomic structure factor, $F_{hkl}$, a measure of the scattering power for reflection $\hkl$. Here, $x,y,z$ are the positional coordinates of reflection $\hkl$ in a unit cell of volume $V$, where $h,k,\ell$ are the Miller indices describing the orientation of the crystal plane in reciprocal space. %by quantifying its reciprocal intercepts in the crystal axes.
 
 Experimental phasing is concerned with solving the phase problem to extract structural information from diffraction experiments. One set of techniques which have become the preferred phasing methods in \ac{mx} rely on anomalous scattering, a phenomenon observed in the X-ray absorption of matter.
 
@@ -65,21 +65,21 @@ This behaviour is element-specific and exhibits a strong dependence on the wavel
 % add side-by-side picture of Friedel's law obeyed
 % replace labels with f = f0 + f' + if"
 
-Experimental phasing by anomalous diffraction takes advantage of the differences in amplitude between Friedel pairs to determine the phase angles. In \ac{mad}, phases are determined using the orthogonal information from anomalous dispersion recorded at multiple wavelengths. \Ac{sad}, on the other hand, requires phase ambiguity resolution either in the form of a structural derivative labelled with an anomalous scatterer, a common example being methionine labelled with selenium to form selenomethionine, or by using the anomalous signal of natively present atoms in what is known as native \ac{sad}.
+Experimental phasing by anomalous diffraction takes advantage of the differences in amplitude between Friedel pairs to determine the phase angles. In \ac{mad}, phases are determined using the orthogonal information from anomalous dispersion recorded at multiple wavelengths. \Ac{sad}, on the other hand, requires phase ambiguity resolution either in the form of a structural derivative labelled with an anomalous scatterer, a common example being methionine labelled with selenium to form selenomethionine (\ce{C5H11NO2Se}), or by using the anomalous signal of natively present atoms in what is known as native \ac{sad}.
 
 Native \ac{sad} is considered an attractive phasing technique in  \textit{de novo} X-ray structure determination %in MX,
-for exploiting weak signals from intrinsic anomalous scatterers \cite{Basu2019}, with its most popular applications being on native sulphur and phosphorous \cite{Karasawa2022}. However, native \ac{sad} has its challenges in \ac{mx}, largely owing to the fact that standard beamlines are optimised around the Se K-edge at 12.7 \unit{keV} (0.979 Å) to allow for experiments on selenomethionine (\ce{C5H11NO2Se}) and Se-incorporated proteins.
+for exploiting weak signals from intrinsic anomalous scatterers \cite{Basu2019}, with its most popular applications being on native sulphur and phosphorous \cite{Karasawa2022}. However, native \ac{sad} has its challenges in \ac{mx}, largely owing to the fact that standard beamlines are optimised around the Se K-edge at 12.7 \unit{keV} (0.979 Å) to allow for experiments on selenomethionine-labelled proteins.
 While the absorption edges relevant to metalloproteins therefore typically lie in the accessible wavelength range of most standard \ac{mx} beamlines (0.9-2.5 Å), %(5-12 \unit{keV})
 several light atoms native to nucleic acids and proteins (including sulphur and phosphorous), have absorption edges beyond the reach of most current \ac{mx} beamlines (5.02 Å and 5.78 Å respectively) \cite{Olieric2016}. 
 
 %thus
-Native \ac{sad} is in turn typically performed at 'compromise' energies of around 6 \unit{keV}, which is far from the absorption edges of the aforementioned light atoms. The resulting anomalous signal is small and systematic errors from radiation damage need to be minimised to accurately measure reflection intensities \cite{DjinovicCarugo2005}.%(Djinovic-Carugo, 2005). %This renders many biologically useful native SAD experiments inaccessible to most MX beamlines. 
+Native \ac{sad} on standard \ac{mx} beamlines is in turn typically performed at 'compromise' energies of around 6 \unit{keV}, which is far from the absorption edges of the aforementioned light atoms. The resulting anomalous signal is small and systematic errors from radiation damage need to be minimised to accurately measure reflection intensities \cite{DjinovicCarugo2005}.%(Djinovic-Carugo, 2005). %This renders many biologically useful native SAD experiments inaccessible to most MX beamlines. 
 
 %hindered by the necessity to access longer X-ray wavelengths
 %in order to make most use of the anomalous scattering contributions of these elements. Presented here are the results from a first successful experimental phasing study of a macromolecular crystal structure
 %at a wavelength close to the sulfur K edge. This has been made possible by the in-vacuum setup and the long-wavelength optimised experimental setup at the I23 beamline at Diamond Light Source. In these early commissioning experiments only standard data collection and processing procedures have been applied, in particular no dedicated absorption correction has been used.
 
-Data collection at energies lower than 6 \unit{keV} is attractive for the native \ac{sad} phasing of macromolecules for this reason \cite{Omari2023}. This is demonstrated %corroborated
+Data collection at energies lower than 6 \unit{keV} is attractive for the native \ac{sad} phasing of macromolecules for this reason, with the optimal wavelength for \ac{sad} experiments based on sulphur (S-\ac{sad}) having been reported as $\lambda = 2.75$ Å \cite{Omari2023}. This was demonstrated %corroborated
 by beamline I23 at Diamond Light Source, arguably one of the most specialised \ac{mx} beamlines in the world \cite{Foerster2019}. %In addition to phasing, another use of anomalous diffraction is for ion identification, which is another primary focus of beamline I23.%epitomised
 
 \subsection{Beamline I23: Long-wavelength Macromolecular Crystallography}
@@ -89,24 +89,24 @@ I23 is a unique long-wavelength \ac{mx} beamline capable of operating at wavelen
 
 The wavelength range at I23 covers the absorption edges of
 %several anomalous scatterers of biological importance, such as sulphur, potassium, chlorine, and phosphorous. 
-light elements often present in macromolecules (P, S, Cl, K, Ca), as seen in \cref{Anomaluos scattering edges}.
-Native \ac{sad} experiments performed at I23 enable phasing without the need for additional labelling by exploiting the anomalous scattering from these atoms at sufficiently long wavelengths. Some of the first succesful native \ac{sad} experiments at I23, at a wavelength close to the sulphur K-edge, demonstrated both the necessity for accessing longer wavelengths and that the capability to extract phase information can be even further improved once data collection and processing protocols have been optimised \cite{Aurelius2017}.
+light elements often present in macromolecules (P, S, Cl, K, Ca), as presented in \cref{Anomaluos scattering edges}.
+Native \ac{sad} experiments performed at I23 enable phasing without the need for additional heavy-atom labelling by exploiting the anomalous scattering from these atoms at sufficiently long wavelengths. Some of the first successful native \ac{sad} experiments at I23, at a wavelength close to the sulphur K-edge, demonstrated both the necessity for accessing longer wavelengths and that the capability to extract phase information can be further improved once data collection and processing protocols have been optimised \cite{Aurelius2017}.
 %the need for derivatives such as selenomethionine.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width = 0.75\textwidth]{images/absorption lines high quality cropped.png}
-    \caption{Characteristic X-ray lines of biologically relevant elements (P, S, Cl, K, Ca) accessible at I23 beamline energy range. Solid lines represent absorption ($f"$) edges and dashed lines represent dispersion ($f'$) edges. Adapted from the \href{http://skuld.bmsc.washington.edu/scatter/AS_periodic.html}{X-ray Absorption Edges} platform using the subroutine library by Brennan and Cowan \cite{Brennan1992}.}%anomalous scatterers common in macromolecules (P, S, Cl, K, Ca), showing the real dispersive term $f'$ and imaginary absorptive term $f''$. NB elements of a lower atomic number have emission lines at longer wavelengths. Produced by Brennan and Cowan. \cite{Brennan1992} }%NB the emission wavelength is critically affected by the molecular environment, and therefore unique to every atom in a structure.}
+    \caption{Characteristic X-ray lines of biologically relevant elements (P, S, Cl, K, Ca) accessible at I23 beamline energy range. Solid lines represent absorption ($f"$) and dashed lines represent dispersion ($f'$). Adapted from the \href{http://skuld.bmsc.washington.edu/scatter/AS_periodic.html}{X-ray Absorption Edges} platform using the subroutine library by Brennan and Cowan \cite{Brennan1992}.}%anomalous scatterers common in macromolecules (P, S, Cl, K, Ca), showing the real dispersive term $f'$ and imaginary absorptive term $f''$. NB elements of a lower atomic number have emission lines at longer wavelengths. Produced by Brennan and Cowan. \cite{Brennan1992} }%NB the emission wavelength is critically affected by the molecular environment, and therefore unique to every atom in a structure.}
     \label{Anomaluos scattering edges}
 \end{figure}
 
-In ion identification experiments at I23, data collection wavelengths can be tuned to closely above and below the absorption edges as a process of elimination. %, also enabling identification of the element type and location; an example of this application in experiment is known as $f"$-refinement, 
-Another novel method of ion identification recently developed at I23 by Kamel El Omari is known as $f"$-refinement, where the $f"$ edge of an unknown atom is refined according to the theoretical $f'$ of a trial atom, as a means to determine the atom type. % anomalous scattering at I23.%where the experimentally determined $f"$ elucidates the atom type. %this is the primary application of anomalous scattering at I23. %Ion identification using anomlous scattering is therefore a large focus of I23.
+In ion identification experiments at I23, data collection wavelengths can be tuned to above and below the absorption edges of an atom, as a process of elimination. %, also enabling identification of the element type and location; an example of this application in experiment is known as $f"$-refinement, 
+A novel method of ion identification currently being developed at I23 is known as $f"$-refinement, where the $f"$ edge of an unknown atom is refined according to the theoretical $f'$ of a trial atom, as a means to determine the atom type. % anomalous scattering at I23.%where the experimentally determined $f"$ elucidates the atom type. %this is the primary application of anomalous scattering at I23. %Ion identification using anomlous scattering is therefore a large focus of I23.
 
 The need for the beamline's specialised operation stems from the complex challenges of operating at such low energies, which greatly reduce the quality of diffraction experiments.
 %Low-energy \ac{xrd} is hindered by 
-Bragg’s law, $nλ = 2d \sin(\theta)$, demonstrates that the diffraction angle increases with wavelength, meaning that the highest resolution long-wavelengths can be hindered by the the size of the detector and go unrecorded. %The highest resolution X-rays can therefore go unrecorded if they pass beyond the reach of the detector. 
-The solution to this on I23 is a semi-cylindrical detector, the Pilatus 12M shown in \cref{fig:gonio_and_detector} (right), which allows most of the data to be detected. Nevertheless, data resolution is still limited by the detector’s geometry at the longest wavelengths.
+Bragg’s law, $nλ = 2d \sin(\theta)$, demonstrates that the diffraction angle increases with wavelength, meaning that the highest resolution long-wavelengths are hindered by the size of the detector and can go unrecorded. %The highest resolution X-rays can therefore go unrecorded if they pass beyond the reach of the detector. 
+The solution to this on I23 is a semi-cylindrical detector, the Pilatus 12M shown in \cref{fig:gonio_and_detector} (right), which mitigates these problems. Nevertheless, data resolution is still limited by the detector’s geometry at the longest wavelengths.
 
 \begin{figure}
     \centering
@@ -117,11 +117,11 @@ The solution to this on I23 is a semi-cylindrical detector, the Pilatus 12M show
 
  Another challenge is that sample absorption is approximately proportional to the cube of the wavelength, $\mu \propto \lambda^3$ \cite{Arndt1984}, making it a crucial limiting factor at long-wavelengths. The effects not only contribute to radiation damage, but also attenuate the diffracted X-rays within the sample \cite{Wagner2016}.
 
-To eliminate the absorption of low-energy X-rays by gases, experiments are performed in-vacuum at temperatures below 100 K. This setup requires a dedicated endstation for the transfer of frozen samples from air to a vacuum environment. By operating in-vacuum at cryogenic temperatures, I23 eliminates air absorption and scattering while reducing the effects of radiation damage, increasing the signal-to-noise ratio even at the lowest energies.
+To eliminate the absorption of low-energy X-rays by air, experiments are performed in-vacuum at temperatures below 100 K. This setup requires a dedicated endstation for the transfer of cryogenically-cooled samples from air to a vacuum environment. By operating in-vacuum at cryogenic temperatures, I23 eliminates air absorption and scattering while reducing the effects of radiation damage, increasing the signal-to-noise ratio even at the lowest energies.
 
 % pictures of endstation + vacuum chamber + detector + crystream
 
-Despite the specialised endstation at I23, the effects of absorption on experiments are still drastic at the longest wavelengths, and a correction is needed in response \cite{Kazantsev2021}.
+Despite the specialised endstation at I23, the effects of absorption from samples on experiments are still drastic at the longest wavelengths, and a correction is needed in response \cite{Kazantsev2021}.
 
 \subsection{Absorption Correction Techniques at I23}
 
@@ -133,7 +133,7 @@ Despite the specialised endstation at I23, the effects of absorption on experime
 
 %Since high-quality structure determination relies on accurate structure factor amplitudes, 
 
-Accounting for the absorption effects on Bragg’s intensities becomes critical at long wavelengths. For a lone crystal sample, the measured intensities corrected for absorption are given by $I_{corr} = I_{measured}/A_{\hkl}$, where the absorption correction factor, $A_{\hkl}$, for the reflection $\hkl$ is given by \cite{Albrecht1939}: %(Albrecht, 1939):
+Accounting for the absorption effects on Bragg intensities becomes critical at long wavelengths. For a lone crystal sample, the measured intensities corrected for absorption are given by $I_{corr} = I_{measured}/A_{\hkl}$, where the absorption correction factor, $A_{\hkl}$, for the reflection $\hkl$ is given by \cite{Albrecht1939}: %(Albrecht, 1939):
 
 \begin{equation}
     A_{\hkl} = \frac{1}{V} \int_V \exp{-\mu(L_1+L_2)} dV
@@ -156,14 +156,23 @@ Absorption corrections are typically performed using empirical methods based on 
 
 \begin{figure}
     \centering
-    \includegraphics[trim={3cm 0 3cm 0},clip,width = 0.5\textwidth]{images/Spherical_Harmonics.png}
-    \caption{Representation of the real component of the first few spherical harmonics models. Reproduced from Schönefeld (2005) \cite{Schoenefeld2005}.}
+    \includegraphics[trim={2.3cm 0 0 2.4cm},clip,width = 0.5\textwidth]{images/sh_basis.png}
+    \caption{Representation of the real component of the first few spherical harmonics models. Developed by the Computer Engineering Group (AG Technische Informatik)
+of Bielefeld University, using an adapted version of the algorithm described in Kostelec and Rockmore (2008) \cite{Kostelec2008}.}
     \label{fig:SH}
 \end{figure}
 
-Most data reduction software in \ac{mx} use \ac{sh} as a basis for absorption correction calculations. This includes DIALS \cite{Winter2018}, the reduction software used as standard at Diamond Light Source.
 
-Because empirical methods are independent of sample geometry, their efficiency depends on the number of symmetry equivalent reflections, which is directly related to data multiplicity. Their applicability is therefore limited in low-symmetry space groups. More relevant to I23, empirical corrections become inadequate for modelling strong absorption effects above 3.5 Å, and an analytical correction is needed \cite{Kazantsev2021}.
+%\begin{figure}
+    %\centering
+    %\includegraphics[trim={3cm 0 3cm 0},clip,width = 0.5\textwidth]{images/Spherical_Harmonics.png}
+    %\caption{Representation of the real component of the first few spherical harmonics models. Reproduced from Schönefeld (2005) \cite{Schoenefeld2005}.}
+    %\label{fig:SH}
+%\end{figure}
+
+Most data integration software in \ac{mx} use \ac{sh} as a basis for absorption correction calculations. This includes DIALS \cite{Winter2018}, the integration software used as standard at Diamond Light Source.
+
+Because empirical methods are independent of sample geometry, their efficiency depends on the number of symmetry equivalent reflections, which is directly related to data multiplicity. Their applicability is therefore limited in crystals with low-symmetry space groups. More relevant to I23, empirical corrections become inadequate for modelling strong absorption effects above 3.5 Å, and an analytical correction is needed \cite{Kazantsev2021}.
 
 %To analytically calculate the $A_{\hkl}$ factors in \cref{AbsFactor_allmaterials}, the shape and orientation have to be characterised in detail.
 Characterising the shape and orientation in detail has previously been done using optical microscopy \cite{Leal2008, Strutz2011}. %(Leal 2008, Strutz 2011)
@@ -171,14 +180,14 @@ An alternative approach taken by I23 to obtain the 3D sample model is X-ray tomo
 
  It has previously been reported that using tomographic reconstructions and segmentation as a basis for absorption correction allows for the calculation of X-ray path lengths through all the different materials in the sample \cite{Brockhauser2008}. This tomography-based approach to corrections is the focus of this project.
 
-By operating a tomography camera integrated into the endstation, I23 applies \ac{ac} based on a physical model of the sample derived from X-ray tomography, while empirical ones based on \ac{sh} are performed in the post-refinement step. Most relevant to this project is an approach that combines these two methods, by applying an empirical correction to the reconstructed physical model of the sample. This method is referred to as an \ac{acsh} in the remainder of this work. %in this project
+By operating a tomography camera integrated into the endstation, I23 applies \ac{ac} based on a physical model of the sample derived from X-ray tomography, while the \ac{sh}-based corrections in DIALS are the default automatic processing and scaling method. Most relevant to this project is an approach that combines these two methods, by applying an empirical correction to the reconstructed physical model of the sample. This method is referred to as an \ac{acsh} in the remainder of this thesis. %in this project
 
-This project will investigate tomographic reconstructions as a basis for calculating absorption factors with the help of \textbf{AnACor}, a novel ray-tracing software that has been developed collaboratively between I23, Graeme Winter at Diamond Light Source, and Yishun Lu at the Department of Engineering, University of Oxford. AnACor implements ray-tracing to estimate the path lengths of incident and diffracted X-rays through the sample \cite{Lu2024}, as illustrated in \cref{fig:analytical correction model}.
+This project will investigate tomographic reconstructions as a basis for calculating absorption factors with the help of \textbf{AnACor}, a novel ray-tracing software that has been developed by Wes Armour and Yishun Lu at the Oxford Department of Engineering, and integrated into DIALS at I23 with the help of the DIALS team at Diamond Light Source. AnACor implements ray-tracing to estimate the path lengths of incident and diffracted X-rays through the sample \cite{Lu2024}, as illustrated in \cref{fig:analytical correction model}.
 
 \begin{figure}
     \centering
     \includegraphics[width = 0.6\textwidth]{images/absorption correction diagram.jpg}
-    \caption{Sketch illustrating the ray-tracing of absolute path lengths of X-rays through a sample, serving as the basis for analytically calculating absorption coefficients. $L_{m1}^{(n)}$ and $L_{m2}^{(n)}$ represent the path lengths of the incident and diffracted beams respectively for a material $m$. Adapted from Lu \textit{et al.} \cite{Lu2024}.
+    \caption{Sketch illustrating the ray-tracing of absolute path lengths of X-rays through a sample, serving as the basis for analytically calculating absorption corrections. $L_{m1}^{(n)}$ and $L_{m2}^{(n)}$ represent the path lengths of the incident and diffracted beams respectively for a material $m$. Adapted from Lu \textit{et al.} \cite{Lu2024}.
     % Fig. 1. A sketch illustrating the ray-tracing method used to calculate an absorption correction factor for a crystal voxel n. L(n)_m1 and L(n)_m2 represent the path lengths of m1	m2 the incident and diffracted X-ray beams through the material m (loop, liquor and crystal).
     }
     \label{fig:analytical correction model}
@@ -192,7 +201,7 @@ AnACor calculates the absorption factors for materials in an analytical 3D model
 
 Where $N$ is the number of crystal voxels in the model exposed to the X-ray beam.
 
-A second alternative correction technique, which is a newer but less established practice at I23, is laser-shaping. By operating a femtosecond laser system optimised for cryo-crystallography samples, I23 can utilise laser-shaping to remove the non-diffracting material from a sample, leaving ideally only the diffracting material prior to the diffraction experiment. This thereby removes a significant amount of background noise, boosting the diffracting quality, and likewise removes absorbing materials, reducing the need for correction.
+An alternative correction technique, which is a newer but less established practice at I23, is laser-shaping. By operating a femtosecond laser system optimised for cryo-crystallography samples, I23 can utilise laser-shaping to remove the non-diffracting material from a sample, leaving ideally only the diffracting material prior to the diffraction experiment. This thereby removes a significant amount of background noise, boosting the diffracting quality, and likewise removes absorbing materials, reducing the need for correction.
 
 Previous studies have shown that both tomography-based reconstruction and laser-shaping can be beneficial for improving the detection of anomalous signal, but the effects of combining these practices has not yet been explored. This project sets out to do so by observing the data quality statistics of a laser-shaped crystal and a control from the same batch corrected with standard \ac{sh} practices, analytically (\ac{ac}), and with the coupled approach of the two (\ac{acsh}).
 
@@ -201,8 +210,8 @@ Previous studies have shown that both tomography-based reconstruction and laser-
 The main aims of this project are as follows:
 
 \begin{enumerate}
-    \item Establish the AnACor software produces valid experimental absorption coefficients from X-ray tomography
-    \item Demonstrate the successes and shortcomings of tomography-based \ac{ac} and that of a coupled approach (\ac{acsh}) to standard practices (\ac{sh})
+    \item Establish that the AnACor software produces valid experimental absorption coefficients from X-ray tomography
+    \item Demonstrate the successes and shortcomings of tomography-based \ac{ac} and that of a coupled approach (\ac{acsh}) compared to standard practices (\ac{sh})
     %\item Test the ability of the analytical approaches in identifying sodium ions in lysozyme protein
     \item Assess the effects of tomography-based analytical corrections on $f"$-refinement
     \item Assess the effects of laser-shaping as an alternative absorption correction with standard correction protocol and with tomography-based analytical corrections
