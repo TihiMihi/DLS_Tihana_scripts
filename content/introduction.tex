@@ -79,7 +79,7 @@ Native \ac{sad} on standard \ac{mx} beamlines is in turn typically performed at 
 %in order to make most use of the anomalous scattering contributions of these elements. Presented here are the results from a first successful experimental phasing study of a macromolecular crystal structure
 %at a wavelength close to the sulfur K edge. This has been made possible by the in-vacuum setup and the long-wavelength optimised experimental setup at the I23 beamline at Diamond Light Source. In these early commissioning experiments only standard data collection and processing procedures have been applied, in particular no dedicated absorption correction has been used.
 
-Data collection at energies lower than 6 \unit{keV} is attractive for the native \ac{sad} phasing of macromolecules for this reason, with the optimal wavelength for \ac{sad} experiments based on sulphur (S-\ac{sad}) having been reported as $\lambda = 2.75$ Å \cite{Omari2023}. This was demonstrated %corroborated
+Data collection at energies lower than 6 \unit{keV} is attractive for the native \ac{sad} phasing of macromolecules for this reason, with the optimal wavelength for \ac{sad} experiments based on sulphur (S-\ac{sad}) having been reported as $\lambda = 2.75$ Å \cite{Omari2023}. This is demonstrated %corroborated
 by beamline I23 at Diamond Light Source, arguably one of the most specialised \ac{mx} beamlines in the world \cite{Foerster2019}. %In addition to phasing, another use of anomalous diffraction is for ion identification, which is another primary focus of beamline I23.%epitomised
 
 \subsection{Beamline I23: Long-wavelength Macromolecular Crystallography}
@@ -101,7 +101,7 @@ Native \ac{sad} experiments performed at I23 enable phasing without the need for
 \end{figure}
 
 In ion identification experiments at I23, data collection wavelengths can be tuned to above and below the absorption edges of an atom, as a process of elimination. %, also enabling identification of the element type and location; an example of this application in experiment is known as $f"$-refinement, 
-A novel method of ion identification currently being developed at I23 is known as $f"$-refinement, where the $f"$ edge of an unknown atom is refined according to the theoretical $f'$ of a trial atom, as a means to determine the atom type. % anomalous scattering at I23.%where the experimentally determined $f"$ elucidates the atom type. %this is the primary application of anomalous scattering at I23. %Ion identification using anomlous scattering is therefore a large focus of I23.
+A novel method of ion identification is currently being developed at I23 based on the refinement of the $f"$ edge of a given atom.%, where the $f"$ edge of an unknown atom is refined according to the theoretical $f'$ of a trial atom, as a means to determine the atom type. % anomalous scattering at I23.%where the experimentally determined $f"$ elucidates the atom type. %this is the primary application of anomalous scattering at I23. %Ion identification using anomlous scattering is therefore a large focus of I23.
 
 The need for the beamline's specialised operation stems from the complex challenges of operating at such low energies, which greatly reduce the quality of diffraction experiments.
 %Low-energy \ac{xrd} is hindered by 
@@ -121,7 +121,7 @@ To eliminate the absorption of low-energy X-rays by air, experiments are perform
 
 % pictures of endstation + vacuum chamber + detector + crystream
 
-Despite the specialised endstation at I23, the effects of absorption from samples on experiments are still drastic at the longest wavelengths, and a correction is needed in response \cite{Kazantsev2021}.
+Despite the specialised endstation at I23, the effects of absorption from samples are still drastic at the longest wavelengths, and a correction is needed in response \cite{Kazantsev2021}.
 
 \subsection{Absorption Correction Techniques at I23}
 
@@ -170,9 +170,10 @@ of Bielefeld University, using an adapted version of the algorithm described in 
     %\label{fig:SH}
 %\end{figure}
 
-Most data integration software in \ac{mx} use \ac{sh} as a basis for absorption correction calculations. This includes DIALS \cite{Winter2018}, the integration software used as standard at Diamond Light Source.
+Most data integration software in \ac{mx} use \ac{sh} as a basis for absorption correction calculations. This includes \textit{DIALS} \cite{Winter2018}, the integration software used as standard at Diamond Light Source.
 
-Because empirical methods are independent of sample geometry, their efficiency depends on the number of symmetry equivalent reflections, which is directly related to data multiplicity. Their applicability is therefore limited in crystals with low-symmetry space groups. More relevant to I23, empirical corrections become inadequate for modelling strong absorption effects above 3.5 Å, and an analytical correction is needed \cite{Kazantsev2021}.
+Because empirical methods are independent of sample geometry, their efficiency depends on the number of symmetry equivalent reflections, which is directly related to data multiplicity. Their applicability is therefore limited in crystals with low-symmetry space groups. More relevant to I23, empirical corrections become inadequate for modelling strong absorption effects %above 3.5 Å, 
+and an analytical correction is needed \cite{Kazantsev2021}.
 
 %To analytically calculate the $A_{\hkl}$ factors in \cref{AbsFactor_allmaterials}, the shape and orientation have to be characterised in detail.
 Characterising the shape and orientation in detail has previously been done using optical microscopy \cite{Leal2008, Strutz2011}. %(Leal 2008, Strutz 2011)
@@ -180,9 +181,9 @@ An alternative approach taken by I23 to obtain the 3D sample model is X-ray tomo
 
  It has previously been reported that using tomographic reconstructions and segmentation as a basis for absorption correction allows for the calculation of X-ray path lengths through all the different materials in the sample \cite{Brockhauser2008}. This tomography-based approach to corrections is the focus of this project.
 
-By operating a tomography camera integrated into the endstation, I23 applies \ac{ac} based on a physical model of the sample derived from X-ray tomography, while the \ac{sh}-based corrections in DIALS are the default automatic processing and scaling method. Most relevant to this project is an approach that combines these two methods, by applying an empirical correction to the reconstructed physical model of the sample. This method is referred to as an \ac{acsh} in the remainder of this thesis. %in this project
+By operating a tomography camera integrated into the endstation, I23 applies \ac{ac} based on a physical model of the sample derived from X-ray tomography, while the \ac{sh}-based corrections in \textit{DIALS} are the default automatic processing and scaling method. Most relevant to this project is an approach that combines these two methods, by applying an empirical correction to the reconstructed physical model of the sample. This method is referred to as an \ac{acsh} in the remainder of this thesis. %in this project
 
-This project will investigate tomographic reconstructions as a basis for calculating absorption factors with the help of \textbf{AnACor}, a novel ray-tracing software that has been developed by Wes Armour and Yishun Lu at the Oxford Department of Engineering, and integrated into DIALS at I23 with the help of the DIALS team at Diamond Light Source. AnACor implements ray-tracing to estimate the path lengths of incident and diffracted X-rays through the sample \cite{Lu2024}, as illustrated in \cref{fig:analytical correction model}.
+This project will investigate tomographic reconstructions as a basis for calculating absorption factors with the help of \textbf{AnACor}, a novel ray-tracing software that has been developed by Wes Armour and Yishun Lu at the Oxford Department of Engineering, and integrated into \textit{DIALS} at I23 with the help of the DIALS team at Diamond Light Source.\textit{AnACor} implements ray-tracing to estimate the path lengths of incident and diffracted X-rays through the sample \cite{Lu2024}, as illustrated in \cref{fig:analytical correction model}.
 
 \begin{figure}
     \centering
@@ -210,9 +211,10 @@ Previous studies have shown that both tomography-based reconstruction and laser-
 The main aims of this project are as follows:
 
 \begin{enumerate}
-    \item Establish that the AnACor software produces valid experimental absorption coefficients from X-ray tomography
+    \item Establish that the\textit{AnACor} software produces valid experimental absorption coefficients from X-ray tomography
     \item Demonstrate the successes and shortcomings of tomography-based \ac{ac} and that of a coupled approach (\ac{acsh}) compared to standard practices (\ac{sh})
     %\item Test the ability of the analytical approaches in identifying sodium ions in lysozyme protein
-    \item Assess the effects of tomography-based analytical corrections on $f"$-refinement
+    \item Assess the effects of tomography-based analytical absorption corrections in a novel refinement protocol for ion-identification
     \item Assess the effects of laser-shaping as an alternative absorption correction with standard correction protocol and with tomography-based analytical corrections
 \end{enumerate}
+
