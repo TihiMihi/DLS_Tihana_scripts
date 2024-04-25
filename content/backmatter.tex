@@ -26,7 +26,7 @@
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lllll@{}}
 \toprule
-Crystal                          & \begin{tabular}[c]{@{}l@{}}Energy\\ (\unit{keV})\end{tabular} & \begin{tabular}[c]{@{}l@{}}N.o. datasets\\ in diffraction\end{tabular} & \begin{tabular}[c]{@{}l@{}}Exposure time\\ (s per 0.2 deg)\end{tabular} & Notes                          \\ \midrule
+Crystal                          & \begin{tabular}[c]{@{}l@{}}Energy\\ (\unit{keV})\end{tabular} & \begin{tabular}[c]{@{}l@{}}Number of data \\sets in diffraction\end{tabular} & \begin{tabular}[c]{@{}l@{}}Exposure time\\ (s per 0.2 deg)\end{tabular} & Notes                          \\ \midrule
                                  & 3.0    & 4             & 0.35                          &                                \\
                                  & 3.5    & 5             & 0.25                          &                                \\
 \multirow{-3}{*}{Thermolysin 1}  & 3.8    & 5             & 0.22                          &                                \\
@@ -55,58 +55,50 @@ Crystal                          & \begin{tabular}[c]{@{}l@{}}Energy\\ (\unit{ke
 \label{tomo_table}
 \end{table}
 
-
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 % \usepackage{multirow}
-% \usepackage{graphicx}
 \begin{table}[]
-\resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lllllll@{}}
 \toprule
-Crystal                    & Energy (\unit{keV})              & Processing symmetry group & N.o. datasets      & Transmission       & $\kappa$ & $\phi$  \\ \midrule
-\multirow{23}{*}{Thermolysin 1} & \multirow{7}{*}{3.0} & \multirow{4}{*}{P6122}     & \multirow{4}{*}{4} & \multirow{4}{*}{5}  & -25 & -100 \\
-                           &                      &                           &                    &                    & -40   & 70   \\
-                           &                      &                           &                    &                    & -35   & -70  \\
-                           &                      &                           &                    &                    & 0     & 0    \\
-                           &                      & \multirow{3}{*}{P1}       & \multirow{3}{*}{3} & \multirow{3}{*}{5} & -70   & 0    \\
-                           &                      &                           &                    &                    & -70   & 120  \\
-                           &                      &                           &                    &                    & -70   & -120 \\ \cmidrule(l){2-7} 
-                           & \multirow{8}{*}{3.5} & \multirow{5}{*}{P6122}    & \multirow{5}{*}{5} & \multirow{5}{*}{1} & 0     & 0    \\
-                           &                      &                           &                    &                    & -15   & 100  \\
-                           &                      &                           &                    &                    & -25   & -100 \\
-                           &                      &                           &                    &                    & -40   & 70   \\
-                           &                      &                           &                    &                    & -35   & -70  \\
-                           &                      & \multirow{3}{*}{P1}       & \multirow{3}{*}{3} & \multirow{3}{*}{1} & -70   & -120 \\
-                           &                      &                           &                    &                    & -70   & 0    \\
-                           &                      &                           &                    &                    & -70   & 120  \\ \cmidrule(l){2-7} 
-                           & \multirow{8}{*}{3.8} & \multirow{5}{*}{P6122}    & \multirow{5}{*}{5} & \multirow{5}{*}{1} & 0     & 0    \\
-                           &                      &                           &                    &                    & -15   & 100  \\
-                           &                      &                           &                    &                    & -25   & -100 \\
-                           &                      &                           &                    &                    & -40   & 70   \\
-                           &                      &                           &                    &                    & -35   & -70  \\ \cmidrule(l){3-7} 
-                           &                      & \multirow{3}{*}{P1}       & \multirow{3}{*}{3} & \multirow{3}{*}{1} & -70   & -120 \\
-                           &                      &                           &                    &                    & -70   & 0    \\
-                           &                      &                           &                    &                    & -70   & 120  \\ \midrule
-\multirow{9}{*}{Thermolysin 2}  & \multirow{4}{*}{3.0} & \multirow{4}{*}{P6122, P1} & \multirow{4}{*}{4} & \multirow{4}{*}{20} & 0   & 0    \\
-                           &                      &                           &                    &                    & -70   & -100 \\
-                           &                      &                           &                    &                    & -70   & 0    \\
-                           &                      &                           &                    &                    & -70   & 100  \\ \cmidrule(l){2-7} 
-                                & \multirow{5}{*}{3.5} & \multirow{5}{*}{P6122, P1} & \multirow{5}{*}{5} & \multirow{5}{*}{15} & 0   & 0    \\
-                           &                      &                           &                    &                    & -70   & -100 \\
-                           &                      &                           &                    &                    & -70   & 0    \\
-                           &                      &                           &                    &                    & -70   & 100  \\
-                           &                      &                           &                    &                    & 0     & 0    \\ \midrule
-Insulin 1                  & 3.0                  & I213                      & 1                  & 20                 & 0     & 0    \\ \midrule
-Insulin 2                  & 3.0                  & I213                      & 1                  & 15                 & 0     & 0    \\ \midrule
-Proteinase-K 1             & 3.0                  & P43212                    & 1                  & 20                 & 0     & 0    \\ \midrule
-Proteinase-K 2             & 3.0                  & P43212                    & 1                  & 20                 & 0     & 0    \\ \midrule
-\multirow{4}{*}{Thaumatin} & 3.0                  & \multirow{4}{*}{P41212}   & 1                  &                    & 0     & 0    \\
-                           & 3.5                  &                           & 1                  &                    & 0     & 0    \\
-                           & 4.0                  &                           & 1                  &                    & 0     & 0    \\
-                           & 4.5                  &                           & 1                  &                    & 0     & 0    \\ \bottomrule
-\end{tabular}%
-}
+Crystal                         & \begin{tabular}[c]{@{}l@{}}Energy\\ (\unit{keV})\end{tabular} & \begin{tabular}[c]{@{}l@{}}Processing symmetry\\ space group\end{tabular} & \begin{tabular}[c]{@{}l@{}}Number\\ of datasets\end{tabular} & \begin{tabular}[c]{@{}l@{}}Transmission\\ (\%)\end{tabular} & $\kappa$ & $\phi$ \\ \midrule
+\multirow{23}{*}{Thermolysin 1} & \multirow{7}{*}{3.0}                                                           & \multirow{4}{*}{P6122}                                                    & \multirow{4}{*}{4}                                           & \multirow{4}{*}{5}                                          & -25      & -100   \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -40      & 70     \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -35      & -70    \\
+                                &                                                                                &                                                                           &                                                              &                                                             & 0        & 0      \\
+                                &                                                                                & \multirow{3}{*}{P1}                                                       & \multirow{3}{*}{3}                                           & \multirow{3}{*}{5}                                          & -70      & 0      \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -70      & 120    \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -70      & -120   \\ \cmidrule(l){2-7} 
+                                & \multirow{8}{*}{3.5}                                                           & \multirow{5}{*}{P6122}                                                    & \multirow{5}{*}{5}                                           & \multirow{5}{*}{1}                                          & 0        & 0      \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -15      & 100    \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -25      & -100   \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -40      & 70     \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -35      & -70    \\
+                                &                                                                                & \multirow{3}{*}{P1}                                                       & \multirow{3}{*}{3}                                           & \multirow{3}{*}{1}                                          & -70      & -120   \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -70      & 0      \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -70      & 120    \\ \cmidrule(l){2-7} 
+                                & \multirow{8}{*}{3.8}                                                           & \multirow{5}{*}{P6122}                                                    & \multirow{5}{*}{5}                                           & \multirow{5}{*}{1}                                          & 0        & 0      \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -15      & 100    \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -25      & -100   \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -40      & 70     \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -35      & -70    \\ \cmidrule(l){3-7} 
+                                &                                                                                & \multirow{3}{*}{P1}                                                       & \multirow{3}{*}{3}                                           & \multirow{3}{*}{1}                                          & -70      & -120   \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -70      & 0      \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -70      & 120    \\ \midrule
+\multirow{9}{*}{Thermolysin 2}  & \multirow{4}{*}{3.0}                                                           & \multirow{4}{*}{P6122, P1}                                                & \multirow{4}{*}{4}                                           & \multirow{4}{*}{20}                                         & 0        & 0      \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -70      & -100   \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -70      & 0      \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -70      & 100    \\ \cmidrule(l){2-7} 
+                                & \multirow{5}{*}{3.5}                                                           & \multirow{5}{*}{P6122, P1}                                                & \multirow{5}{*}{5}                                           & \multirow{5}{*}{15}                                         & 0        & 0      \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -70      & -100   \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -70      & 0      \\
+                                &                                                                                &                                                                           &                                                              &                                                             & -70      & 100    \\
+                                &                                                                                &                                                                           &                                                              &                                                             & 0        & 0      \\ \midrule
+Insulin 1                       & 3.0                                                                            & I213                                                                      & 1                                                            & 20                                                          & 0        & 0      \\ \midrule
+Insulin 2                       & 3.0                                                                            & I213                                                                      & 1                                                            & 15                                                          & 0        & 0      \\ \midrule
+Proteinase-K 1                  & 3.0                                                                            & P43212                                                                    & 1                                                            & 20                                                          & 0        & 0      \\
+Proteinase-K 2                  & 3.0                                                                            & P43212                                                                    & 1                                                            & 20                                                          & 0        & 0      \\ \bottomrule
+\end{tabular}
 \caption{Diffraction Data Parameters; collected at beamline I23, Diamond Light Source, UK.}
 \label{diffration_table}
 \end{table}
@@ -132,7 +124,7 @@ OmpK36 & 0.0160  & 0.01856       & 0.01724 & N/A                 \\ \bottomrule
 
 
 
-
+\vspace{10em}
 
 
 % Please add the following required packages to your document preamble:
@@ -321,36 +313,56 @@ OmpK36 & 0.0160  & 0.01856       & 0.01724 & N/A                 \\ \bottomrule
     \label{fig:tlys9_zn_peaks_3p8}
 \end{figure}
 
+% TLYS 9 MERGED ANODE PEAKS
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 1.0 \textwidth]{plots/exp1/tlys_9_P6122/peaks/merged_peaks_so4.pdf}
+    \caption{Top four \textit{Anode} peaks of merged Thermolysin 1, at energies 3.0, 3.5, 3.8 \unit{keV}. (Left to right): zinc, methionine (position 205), methionine (position 120), sulphate.}
+    \label{fig:tlys_9_merged_peaks}
+\end{figure}
+
+
 
 
 % TLYS 2 ANODE PEAKS
 \begin{figure}
     \centering
     \begin{tabular}{cc}
-        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_met250.pdf} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_met120.pdf}
+        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_met120.pdf} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_met120.pdf}
     \end{tabular}
-    \caption{Thermolysin 2: Anomalous density peaks of methionine groups at 3.0 \unit{keV}. Methionine in polypeptide chain position 205 shown on the left. Methionine in position 120 shown on the right.}
-    \label{fig:tlys2_met_peaks_3p0}
+    \caption{Thermolysin 2: Anomalous density peaks of methionine  in polypeptide chain position 120 at 3.0 \unit{keV} (left) and 3.5 \unit{keV} (right).}%Methionine in polypeptide chain position 205 shown on the left. Methionine in position 120 shown on the right.}
+    \label{fig:tlys2_met_120_peaks}
 \end{figure}
+
+
+%\begin{figure}
+    %\centering
+    %\begin{tabular}{cc}
+        %\includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_zinc.pdf} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_zinc.pdf}
+    %\end{tabular}
+    %\caption{Thermolysin 2: Anomalous density peaks of zinc at 3.0 \unit{keV} (left) and 3.5 \unit{keV} (right).}
+    %\label{fig:tlys2_zn_peaks}
+%\end{figure}
 
 \begin{figure}
     \centering
     \begin{tabular}{cc}
-        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_met250.pdf} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_met120.pdf}
+        \includegraphics[trim={11cm 7cm 11cm 7cm},clip, width=0.5\textwidth]{images/Screenshot (69).png} & \includegraphics[trim={11cm 3cm 11cm 11cm},clip, width=0.5\textwidth]{images/Screenshot (70).png} % left bottom right top
     \end{tabular}
-    \caption{Thermolysin 2: Anomalous density peaks of methionine groups at 3.5 \unit{keV}. Methionine in polypeptide chain position 205 shown on the left. Methionine in position 120 shown on the right.}
-    \label{fig:tlys2_met_peaks_3p5}
+    \caption{Thermolysin 2: Anomalous difference Fourier map of dataset 1 at 3.0 \unit{keV}, zoomed into zinc (left) and \ce{SO4} (position 4 in chain B) (right). Final reflection map of \ac{acsh} given in red; final reflection map of \ac{sh} given in green.}
+    \label{fig:anom_diff_3p0}
 \end{figure}
+
 
 \begin{figure}
     \centering
     \begin{tabular}{cc}
-        \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p0_zinc.pdf} & \includegraphics[width = 0.5\textwidth]{plots/exp1/tlys_2_P6122/peaks/3p5_zinc.pdf}
+        \includegraphics[trim={11cm 7cm 11cm 7cm},clip, width=0.5\textwidth]{images/Screenshot (68).png} & \includegraphics[trim={11cm 5cm 11cm 9cm},clip, width=0.5\textwidth]{images/Screenshot (66).png} % left bottom right top
     \end{tabular}
-    \caption{Thermolysin 2: Anomalous density peaks of zinc at 3.0 \unit{keV} (left) and 3.5 \unit{keV} (right).}
-    \label{fig:tlys2_zn_peaks}
+    \caption{Thermolysin 2: Anomalous difference Fourier map of dataset 1 at 3.5 \unit{keV}, zoomed into zinc (left) and \ce{SO4} (position 4 in chain B) (right). Final reflection map of \ac{acsh} given in red; final reflection map of \ac{sh} given in green.}
+    \label{fig:anom_diff_3p5}
 \end{figure}
-
 
 
 %P1
